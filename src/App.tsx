@@ -16,7 +16,7 @@ const App = () => {
 
     <Router>
       <NavegacaoSuperior />
-      <Navegacao /> 
+      
       
       <div className='content'>
         <Routes>
@@ -30,7 +30,7 @@ const App = () => {
           <Route path='/notificacao' element={<Notificacao />} />
         </Routes>
       </div>
-      
+      <Navegacao /> 
       
     </Router>
   );
