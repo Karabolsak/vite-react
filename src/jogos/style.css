@@ -1,0 +1,148 @@
+.principal {
+    margin: 0px;
+}
+.jogos-curtidos {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.jogos-curtidos ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    border-bottom: 1px solid aliceblue;
+}
+.jogos-curtidos li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jogos-curtidos img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+.principal-jogos h2 {
+    text-align: left;
+    font-size: 1.3em;
+    font-style: italic;
+    font-weight: 200;
+    color: aliceblue;
+}
+/*
+  <div className='bottom-destaque'> 
+                <a href="#">
+                    <span></span><span></span>
+                    <span></span><span></span>
+                    Acessar
+                </a>
+            </div> 
+.bottom-destaque a {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+.bottom-destaque a span {
+    position: absolute;
+    display: block;
+    background: #03e9f4;
+}
+.bottom-destaque a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    animation: animate-border-top 3s linear infinite;
+}
+.bottom-destaque a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    animation: animate-border-right 3s linear infinite;
+    animation-delay: 0.75s;
+}
+.bottom-destaque a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    animation: animate-border-bottom 3s linear infinite;
+    animation-delay: 1.5s;
+}
+.bottom-destaque a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    animation: animate-border-left 3s linear infinite;
+    animation-delay: 2.25s;
+}
+@keyframes animate-border-top {
+    0% { left: -100%; }
+    50% { left: 0; }
+    100% { left: 0; }
+}
+@keyframes animate-border-right {
+    0% { top: -100%; }
+    50% { top: 0; }
+    100% { top: 0; }
+}
+@keyframes animate-border-bottom {
+    0% { right: -100%; }
+    50% { right: 0; }
+    100% { right: 0; }
+}
+@keyframes animate-border-left {
+    0% { bottom: -100%; }
+    50% { bottom: 0; }
+    100% { bottom: 0; }
+} */
+.jogos-destaque {
+    display: flex; /* Organiza as imagens na horizontal */
+    gap: 20px; /* Espaçamento entre as imagens */
+    padding-bottom: 10px;
+    overflow-x: auto; /* Adiciona o scroll horizontal */
+    scroll-snap-type: x mandatory; /* Garante que as imagens 'encaixem' ao parar o scroll */
+    -webkit-overflow-scrolling: touch; /* Melhora o desempenho no iOS */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+.jogo-imagem {
+    width: 130px; /* Tamanho fixo ou responsivo para as imagens */
+    height: auto; /* Mantém a proporção original */
+    border-radius: 8px; /* Bordas arredondadas, se quiser */
+    box-shadow: 0 4px 8px rgb(240, 248, 255, 0.1); /* Adiciona sombra nas imagens */
+    transition: transform 0.3s ease-in-out; /* Efeito de transição ao passar o mouse */
+    scroll-snap-align: center; /* Faz com que cada imagem se alinhe ao centro ao parar de rolar */
+}
+.jogos-normal {
+    display: flex; /* Organiza as imagens na horizontal */
+    gap: 10px; /* Espaçamento entre as imagens */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    overflow-x: auto; /* Adiciona o scroll horizontal */
+    scroll-snap-type: x mandatory; /* Garante que as imagens 'encaixem' ao parar o scroll */
+    -webkit-overflow-scrolling: touch; /* Melhora o desempenho no iOS */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+.jogo-imagem-normal {
+    width: 80px; /* Tamanho fixo ou responsivo para as imagens */
+    height: 90px; /* Mantém a proporção original */
+    border-radius: 8px; /* Bordas arredondadas, se quiser */
+    box-shadow: 0 2px 8px rgb(240, 248, 255, 0.1); /* Adiciona sombra nas imagens */
+    transition: transform 0.3s ease-in-out; /* Efeito de transição ao passar o mouse */
+    scroll-snap-align: center; /* Faz com que cada imagem se alinhe ao centro ao parar de rolar */
+}

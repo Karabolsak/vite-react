@@ -1,0 +1,47 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 330px;
+    height: 60px;
+    transform: translateX(-50%);
+    background-color: #a3a2a2;
+    padding: 10px 10px;
+    border-radius: 0 0 10px 10px; /* Arredondado apenas na parte inferior */
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 1000;
+    height: 40px;
+}
+.container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 20px;
+
+  max-width: 350px;
+  width: 330px;
+}
+.container ul li {
+  list-style: none;
+}
+.tab-img {
+    max-width: 20px;
+    max-height: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s;  
+}
+.tab-usuario {
+  max-width: 40px;
+  max-height: 40px;
+  cursor: pointer;
+}
+.tab-logo {
+  max-width: 40px;
+  max-height: 40px;
+}

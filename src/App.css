@@ -1,42 +1,18 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.content {
+  /*  margin-top: 80px;  
+    padding-bottom: 80px; 
+    max-width: 100vw;  
+    overflow-x: hidden;  
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: calc(100vh - 160px); /* Mantém o conteúdo dentro dos limites */
+    margin-top: 45px; /* Espaço para a NavBar superior */
+    margin-bottom: 50px; /* Espaço para a NavBar inferior */
+    overflow-y: auto; /* Permite rolagem vertical */
+    height: calc(100vh - 160px); /* Define a altura do conteúdo para não ultrapassar as barras */
+    width: 100%;
+    box-sizing: border-box; /* Garantir que o padding não afete o cálculo da largura */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 }
