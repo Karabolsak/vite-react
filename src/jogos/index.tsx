@@ -81,16 +81,7 @@ export default function Jogos () {
             <img src={Forza} alt="" className='jogo-imagem-normal' />
             <img src={Minecraft} alt="" className='jogo-imagem-normal' />
             <img src={Valorant} alt="" className='jogo-imagem-normal' />
-        </div>
-        <div className='jogos-normal'>
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
-        </div>
-        
+        </div>        
         </>
     )
 }
