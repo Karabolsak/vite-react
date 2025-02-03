@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 
 const jogos = [Amoungus, Assassins, Forza, Lol, Minecraft, Valorant];
 const destaques = [Forza, Assassins, Valorant];
+const normais = [Forza, Lol, Minecraft, Amoungus, Assassins, Valorant];
 
 export default function Jogos () {
     return (
@@ -51,37 +52,41 @@ export default function Jogos () {
             <h2>Jogos</h2>
         </div>
         <div className='jogos-normal'>
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Assassins} alt="" className='jogo-imagem-normal' />
-            <img src={Amoungus} alt="" className='jogo-imagem-normal' />
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
+                <ul>
+                 {normais.slice(0, 5).map((normais, index) => (
+                    <li key={index}> 
+                        <img src={normais} alt="jogos normais" className='jogo-imagem-normal' />
+                    </li>
+                 ))}
+                </ul>
         </div>
         <div className='jogos-normal'>
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Lol} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
+                <ul>
+                 {normais.slice(0, 5).map((normais, index) => (
+                    <li key={index}> 
+                        <img src={normais} alt="jogos normais" className='jogo-imagem-normal' />
+                    </li>
+                 ))}
+                </ul>
         </div>
         <div className='jogos-normal'>
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
+                <ul>
+                 {normais.slice(0, 5).map((normais, index) => (
+                    <li key={index}> 
+                        <img src={normais} alt="jogos normais" className='jogo-imagem-normal' />
+                    </li>
+                 ))}
+                </ul>
         </div>
         <div className='jogos-normal'>
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
-            <img src={Forza} alt="" className='jogo-imagem-normal' />
-            <img src={Minecraft} alt="" className='jogo-imagem-normal' />
-            <img src={Valorant} alt="" className='jogo-imagem-normal' />
-        </div>        
+                <ul>
+                 {normais.slice(0, 5).map((normais, index) => (
+                    <li key={index}> 
+                        <img src={normais} alt="jogos normais" className='jogo-imagem-normal' />
+                    </li>
+                 ))}
+                </ul>
+        </div>      
         </>
     )
 }
