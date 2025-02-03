@@ -8,7 +8,7 @@
     align-items: center; 
     min-height: calc(100vh - 160px); /* Mantém o conteúdo dentro dos limites */
     margin-top: 45px; /* Espaço para a NavBar superior */
-    margin-bottom: 130px; /* Espaço para a NavBar inferior */
+    margin-bottom: 160px; /* Espaço para a NavBar inferior */
     overflow-y: auto; /* Permite rolagem vertical */
     height: calc(100vh - 160px); /* Define a altura do conteúdo para não ultrapassar as barras */
     width: 100%;
