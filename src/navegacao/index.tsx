@@ -3,14 +3,14 @@ import './style.css';
 import jogos from './assets/joystick_1.png';
 import estatistica from './assets/statistics_1.png';
 import conectado from './assets/conection_1.png';
-import config from './assets/config_1.png';
+import mission from './assets/mission_1.png';
 import home from './assets/home_1.png';
 
 import jogosAtivo from './assets/joystick_2.png';
 import estatisticaAtivo from './assets/statistics_2.png';
 import conectadoAtivo from './assets/conection_2.png';
 import homeAtivo from './assets/home_2.png';
-import configAtivo from './assets/config_2.png';
+import missionAtivo from './assets/mission_2.png';
 
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -55,18 +55,19 @@ export default function navBottom () {
                </li>
                <li>
                     <img 
+                         src={active ==='mission' ? missionAtivo : mission} 
+                         alt="configuracoes" 
+                         className={`navegadores ${active === 'mission' ? 'active' : ''}`}
+                         onClick={() => handleNavigation('/mission', 'mission')} />
+               </li>
+               <li>
+                    <img 
                          src={active ==='home' ? homeAtivo : home} 
                          alt="home" 
                          className={`navegadores ${active === 'home' ? 'active' : ''}`} 
                          onClick={() => handleNavigation('/home', 'home')}/>
                </li>
-               <li>
-                    <img 
-                         src={active ==='config' ? configAtivo : config} 
-                         alt="configuracoes" 
-                         className={`navegadores ${active === 'config' ? 'active' : ''}`}
-                         onClick={() => handleNavigation('/config', 'config')} />
-               </li>
+               
                
             </ul>
         </nav>

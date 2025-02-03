@@ -2,7 +2,7 @@ import './App.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Jogos from './jogos/index.tsx';
-import Config from './configs/index.tsx';
+import Mission from './mission/index.tsx';
 import Navegacao from './navegacao/index.tsx';
 import Estatistica from './estatistica/index.tsx';
 import Conectado from './conectados/index.tsx';
@@ -22,7 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />   
           <Route path="/jogos" element={<Jogos />} />
-          <Route path="/config" element={<Config />} />
+          <Route path="/mission" element={<Mission />} />
           <Route path="/estatistica" element={<Estatistica />} />
           <Route path="/conectado" element={<Conectado />} />
           <Route path="/home" element={<Home />} />

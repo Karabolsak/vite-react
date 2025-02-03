@@ -33,6 +33,7 @@ align-items: center;
     font-style: italic;
     font-weight: 200;
     color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .jogos-destaque {
     display: flex; 
