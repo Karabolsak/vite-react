@@ -1,0 +1,29 @@
+.principal {
+    padding-bottom: 10px;
+    border-bottom: 1px solid aliceblue;
+    color: white;
+}
+.principal h3 {
+    margin-top: 0px;
+}
+.perfil-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.usuario-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid aliceblue;
+}
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.info-container img {
+    max-width: 30px;
+    max-height: 30px;
+}
