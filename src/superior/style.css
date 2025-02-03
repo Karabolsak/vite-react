@@ -8,10 +8,10 @@
     transform: translateX(-50%);
     background-color: #a3a2a2;
     padding: 10px 10px;
-    border-radius: 0 0 10px 10px; /* Arredondado apenas na parte inferior */
+    border-radius: 0 0 10px 10px; 
     display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; 
+    align-items: center; 
     z-index: 1000;
     height: 40px;
 }
@@ -20,8 +20,8 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between; /* Centraliza os itens horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-between; 
+  align-items: center;
   gap: 20px;
 
   max-width: 350px;
