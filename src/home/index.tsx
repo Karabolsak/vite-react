@@ -12,7 +12,7 @@ export default function Home () {
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.2, delay: 0.3 }}
                 >
                 <h3>Olá, Gabriel</h3>
             </motion.div>    
@@ -20,7 +20,7 @@ export default function Home () {
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}>
+                    transition={{ duration: 0.2, delay: 0.3 }}>
                     <img 
                         src={Usuario} 
                         alt="usuario-foto" 
@@ -53,6 +53,41 @@ export default function Home () {
                         <p>100.000</p>
                 </motion.div>
             </div>
+            <hr className="border-t border-gray-300 my-4" />
+        </div>
+        <div className='conteudo'>
+            <ul>
+                <li>
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.1, delay: 0.3 }}
+                        >
+                            <p>Partidas</p>
+                            <p>134</p>
+                    </motion.div>
+                </li>
+                <li>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.3 }}
+                        >
+                            <p>Pontos</p>
+                            <p>31.846</p>
+                    </motion.div>
+                </li>
+                <li>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                            <p>Avaliação</p>
+                            <p>******</p>
+                    </motion.div>
+                </li>
+            </ul>
         </div>
         </>
     )

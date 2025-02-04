@@ -1,6 +1,4 @@
 .principal {
-    padding-bottom: 10px;
-    border-bottom: 1px solid aliceblue;
     color: white;
 }
 .principal h3 {
@@ -26,4 +24,28 @@
 .info-container img {
     max-width: 30px;
     max-height: 30px;
+}
+.conteudo p {
+    margin: 0;
+    margin-bottom: 2.5px;
+}
+.conteudo h4 {
+    margin: 0;
+}
+.conteudo ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.conteudo li {
+    list-style: none;
+    color: aliceblue;
+    width: auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
