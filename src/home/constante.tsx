@@ -1,20 +1,38 @@
 import './constante.css';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+import Forza from '../jogos/jogos/forza.png';
+import Lol from '../jogos/jogos/lol.png';
+import Minecraft from '../jogos/jogos/minecraft.png'
 
 const Menu = () => {
-    // Estado para armazenar o item ativo
+
+    const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
+    
     const [activeItem, setActiveItem] = useState<string>('Meus jogos');
 
-    // Lista dos itens do menu
+
     const menuItems = ['Meus jogos', 'Histórico', 'Conquistas', 'Pet'];
 
-    // Função para renderizar o conteúdo baseado no item ativo
     const renderContent = () => {
         switch (activeItem) {
-            case 'Histórico':
-                return <div>Conteúdo do Histórico de partidas</div>;
             case 'Meus jogos':
-                return <div>Conteúdo dos Meus jogos</div>;
+                return <div className='conteudoNav'>
+                            {Jogos.map((jogo, index) => (
+                                <motion.img 
+                                    key={index} 
+                                    src={jogo} 
+                                    alt="Destaque" 
+                                    className='jogos-imagem'
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: index * 0.3 }}
+                                />
+                            ))}
+                            </div>;
+            case 'Histórico':
+                return <div>Histórico</div>;            
             case 'Conquistas':
                 return <div>Conteúdo das Conquistas</div>;
             case 'Pet':
@@ -39,7 +57,7 @@ const Menu = () => {
             </ul>
 
             {/* Aqui renderizamos o conteúdo baseado no item ativo */}
-            <div className="content">
+            <div className="Conteudo">
                 {renderContent()}
             </div>
         </div>

@@ -2,11 +2,10 @@
     list-style: none;
     display: flex;
     margin-top: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 0;
     padding: 0;
     justify-content: space-between;
 }
-
 .jogos li {
     list-style: none;
     color: aliceblue;
@@ -17,15 +16,31 @@
     padding: 10px; 
 
 }
-
-/* Efeito de hover */
 .jogos li:hover {
     background-color: rgba(104, 104, 104, 0.664);
     border-radius: 10px;margin: 5px;
 }
-
-/* Estilização do item ativo */
 .jogos .ativo {
     background-color: rgba(104, 104, 104, 0.664);
     border-radius: 10px;margin: 5px;
+}
+.conteudoNav {
+    display: grid; 
+    justify-content: center;
+    gap: 20px; 
+    padding-bottom: 10px;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    grid-template-columns: 90px 90px 90px;
+}
+.jogos-imagem {
+    width: 90px; 
+    height: 90px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgb(240, 248, 255, 0.1); 
+    transition: transform 0.3s ease-in-out; 
+    scroll-snap-align: center;
+}
+.Conteudo {
+    margin-top: 20px;
 }
