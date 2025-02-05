@@ -82,6 +82,5 @@
 }
 
 .jogos .ativo {
-    background-color: rgba(104, 104, 104, 0.664);
-    border-radius: 10px;margin: 5px;
+    background-color: aqua;
 }

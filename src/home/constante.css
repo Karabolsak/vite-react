@@ -1,0 +1,31 @@
+.jogos {
+    list-style: none;
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.jogos li {
+    list-style: none;
+    color: aliceblue;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; 
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover */
+.jogos li:hover {
+    background-color: rgba(104, 104, 104, 0.664);
+    border-radius: 10px;margin: 5px;
+}
+
+/* Estilização do item ativo */
+.jogos .ativo {
+    background-color: rgba(104, 104, 104, 0.664);
+    border-radius: 10px;margin: 5px;
+}

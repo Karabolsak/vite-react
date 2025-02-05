@@ -1,20 +1,9 @@
 import './style.css'
-
 import Usuario from './usuario/usuario.jpg';
 import Logo from './usuario/logo.png';
 import { motion } from 'framer-motion';
 
-const jogosItems = document.querySelectorAll<HTMLLIElement>(".jogos li");
-
-jogosItems.forEach(item => {
-    item.addEventListener("click", () => {
-        // Remove a classe "active" de todos os itens corretamente
-        jogosItems.forEach(i => i.classList.remove("ativo"));
-
-        // Adiciona a classe "active" apenas ao item clicado
-        item.classList.add("ativo");
-    });
-});
+import Constante from './constanteJogos.tsx';
 
 export default function Home () {
     return (
@@ -142,24 +131,8 @@ export default function Home () {
                 </li>
             </ul>
         </div>
-        <div className='jogos'>
-            <div>
-                <ul>
-                    <li className='ativo'>
-                        <p>Meus jogos</p>
-                    </li>
-                    <li>
-                        <p>Histórico</p>
-                    </li>
-                    <li>
-                        <p>Conquistas</p>
-                    </li>
-                    <li>
-                        <p>Pet</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <Constante />
+        
         </>
     )
 }
