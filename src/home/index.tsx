@@ -2,8 +2,7 @@ import './style.css'
 import Usuario from './usuario/usuario.jpg';
 import Logo from './usuario/logo.png';
 import { motion } from 'framer-motion';
-
-import Constante from './constanteJogos.tsx';
+import Menu from './constante.tsx'
 
 export default function Home () {
     return (
@@ -131,8 +130,14 @@ export default function Home () {
                 </li>
             </ul>
         </div>
-        <Constante />
-        
+        <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                >
+             <Menu />
+        </motion.div>
+       
         </>
     )
 }
