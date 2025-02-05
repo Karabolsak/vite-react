@@ -11,7 +11,6 @@ import Estrelas from '../../public/estrelas.png';
 const Menu = () => {
 
     const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
-    const Conquista = ( [Minecraft] );
     
     const [activeItem, setActiveItem] = useState<string>('Meus jogos');
 
