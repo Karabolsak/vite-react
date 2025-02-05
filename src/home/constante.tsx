@@ -5,10 +5,13 @@ import { motion } from 'framer-motion';
 import Forza from '../jogos/jogos/forza.png';
 import Lol from '../jogos/jogos/lol.png';
 import Minecraft from '../jogos/jogos/minecraft.png'
+import Conquista1 from '../../public/conquista1.png';
+import Estrelas from '../../public/estrelas.png';
 
 const Menu = () => {
 
     const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
+    const Conquista = ( [Minecraft] );
     
     const [activeItem, setActiveItem] = useState<string>('Meus jogos');
 
@@ -18,7 +21,7 @@ const Menu = () => {
     const renderContent = () => {
         switch (activeItem) {
             case 'Meus jogos':
-                return <div className='conteudoNav'>
+                return <div className='conteudoJogos'>
                             {Jogos.map((jogo, index) => (
                                 <motion.img 
                                     key={index} 
@@ -34,7 +37,58 @@ const Menu = () => {
             case 'Histórico':
                 return <div>Histórico</div>;            
             case 'Conquistas':
-                return <div>Conteúdo das Conquistas</div>;
+                return <div>
+                            <ul className='conteudoConquista'>
+                                    <motion.li
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4, delay: 0.3 }}                                    
+                                    >
+                                            <div className='conquista'>
+                                                <img src={Conquista1} alt="Primeira Conquista" className='img-conquista'/>
+                                                <div>
+                                                    <h1>+1 Gamer na area</h1>
+                                                    <p>Difícil</p>
+                                                </div>
+                                                <div>
+                                                <img src={Estrelas} alt="Primeira Conquista" className='img-conquista'/>
+                                                </div>
+                                            </div>
+                                    </motion.li>
+                                    <motion.li
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.7, delay: 0.3 }}
+                                    >
+                                            <div className='conquista'>
+                                                <img src={Conquista1} alt="Primeira Conquista" className='img-conquista'/>
+                                                <div>
+                                                    <h1>+1 Gamer na area</h1>
+                                                    <p>Difícil</p>
+                                                </div>
+                                                <div>
+                                                <img src={Estrelas} alt="Primeira Conquista" className='img-conquista'/>
+                                                </div>
+                                            </div>
+                                    </motion.li>
+                                    <motion.li
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.9, delay: 0.3 }}
+                                    >
+                                            <div className='conquista'>
+                                                <img src={Conquista1} alt="Primeira Conquista" className='img-conquista'/>
+                                                <div>
+                                                    <h1>+1 Gamer na area</h1>
+                                                    <p>Difícil</p>
+                                                </div>
+                                                <div>
+                                                <img src={Estrelas} alt="Primeira Conquista" className='img-conquista'/>
+                                                </div>
+                                            </div>
+                                    </motion.li>
+                                </ul>
+                        </div>;
             case 'Pet':
                 return <div>Conteúdo do Pet</div>;
             default:

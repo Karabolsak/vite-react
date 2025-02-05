@@ -24,7 +24,7 @@
     background-color: rgba(104, 104, 104, 0.664);
     border-radius: 10px;margin: 5px;
 }
-.conteudoNav {
+.conteudoJogos {
     display: grid; 
     justify-content: center;
     gap: 20px; 
@@ -43,4 +43,35 @@
 }
 .Conteudo {
     margin-top: 20px;
+}
+.conteudoConquista {
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+.conquista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;background-color: rgba(87, 87, 87, 0.281);
+    border-radius: 20px;
+}
+.img-conquista {
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+}
+.conteudoConquista li {
+    margin-bottom: 10px;
+}
+.conquista h1 {
+    color: aliceblue;
+    font-size: 1em;
+    font-weight: 300;
+}
+.conquista p {
+    margin: 10px;
+    color: aliceblue;
+    font-style: italic;
 }
