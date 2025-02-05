@@ -1,6 +1,6 @@
 .content {
     margin-top: 45px; 
-    margin-bottom: 160px; 
+    margin-bottom: 45px; 
     overflow-y: auto; 
     height: calc(100vh - 160px); 
     width: 100%;

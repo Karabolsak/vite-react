@@ -49,3 +49,26 @@
     align-items: center;
     justify-content: center;
 }
+.conteudo-jogos {
+    background-color: rgba(87, 87, 87, 0.281);
+    width: 340px;
+}
+.conteudo-jogos li {
+    list-style: none;
+    color: aliceblue;
+    font-size: 1em;
+    -webkit-overflow-scrolling: touch; 
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.conteudo-jogos ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.conteudo-jogos p {
+    margin: 0px;
+}

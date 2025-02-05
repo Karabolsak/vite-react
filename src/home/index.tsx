@@ -49,8 +49,16 @@ export default function Home () {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.7 }}>
-                        <p>Jogos</p>
-                        <p>100.000</p>
+                        <p>Partidas</p>
+                        <p>234</p>
+                </motion.div>
+                <motion.div 
+                        className="jogos-container"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.7 }}>
+                        <p>Amigos</p>
+                        <p>15</p>
                 </motion.div>
             </div>
             <hr className="border-t border-gray-300 my-4" />
@@ -63,8 +71,8 @@ export default function Home () {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.1, delay: 0.3 }}
                         >
-                            <p>Partidas</p>
-                            <p>134</p>
+                            <p>Jogos</p>
+                            <p>5</p>
                     </motion.div>
                 </li>
                 <li>
@@ -88,6 +96,58 @@ export default function Home () {
                     </motion.div>
                 </li>
             </ul>
+        </div>
+        <div className='conteudo'>
+            <ul>
+                <li>
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.7, delay: 0.3 }}
+                        >
+                            <p>Jogo Preferido</p>
+                            <p>Valorant</p>
+                    </motion.div>
+                </li>
+                <li>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.9, delay: 0.3 }}
+                        >
+                            <p>Nickname</p>
+                            <p>31.846</p>
+                    </motion.div>
+                </li>
+                <li>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.1, delay: 0.3 }}
+                        >
+                            <p>Ranking</p>
+                            <p>******</p>
+                    </motion.div>
+                </li>
+            </ul>
+        </div>
+        <div className='conteudo-jogos'>
+            <div>
+                <ul>
+                    <li>
+                        <p>Histórico de partidas</p>
+                    </li>
+                    <li>
+                        <p>Meu jogos</p>
+                    </li>
+                    <li>
+                        <p>Conquistas</p>
+                    </li>
+                    <li>
+                        <p>Pet</p>
+                    </li>
+                </ul>
+            </div>
         </div>
         </>
     )
