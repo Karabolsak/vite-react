@@ -115,7 +115,7 @@ export default function Home () {
                         transition={{ duration: 0.9, delay: 0.3 }}
                         >
                             <p>Nickname</p>
-                            <p>31.846</p>
+                            <p>Hora_do_Rush</p>
                     </motion.div>
                 </li>
                 <li>
