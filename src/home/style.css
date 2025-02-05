@@ -49,25 +49,39 @@
     align-items: center;
     justify-content: center;
 }
-.conteudo-jogos {
+.jogos {
     background-color: rgba(87, 87, 87, 0.281);
-
+    border-radius: 10px;
 }
-.conteudo-jogos li {
+.jogos li {
     list-style: none;
     color: aliceblue;
     font-size: 1em;
-    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 10px;  
 }
-.conteudo-jogos ul {
+.jogos li:hover {
+    background-color: rgba(104, 104, 104, 0.664);
+    border-radius: 10px;margin: 5px;
+}
+.ativo {
+    background-color: rgba(104, 104, 104, 0.664);
+    border-radius: 10px;margin: 5px;
+}
+.jogos ul {
     display: flex;
     margin: 0;
     padding: 0;
+    justify-content: space-between;
+    padding: 5px;
 }
-.conteudo-jogos p {
+.jogos p {
     margin: 0px;
+}
+
+.jogos .ativo {
+    background-color: rgba(104, 104, 104, 0.664);
+    border-radius: 10px;margin: 5px;
 }

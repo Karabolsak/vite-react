@@ -4,6 +4,17 @@ import Usuario from './usuario/usuario.jpg';
 import Logo from './usuario/logo.png';
 import { motion } from 'framer-motion';
 
+const jogosItems = document.querySelectorAll<HTMLLIElement>(".jogos li");
+
+jogosItems.forEach(item => {
+    item.addEventListener("click", () => {
+        // Remove a classe "active" de todos os itens corretamente
+        jogosItems.forEach(i => i.classList.remove("ativo"));
+
+        // Adiciona a classe "active" apenas ao item clicado
+        item.classList.add("ativo");
+    });
+});
 
 export default function Home () {
     return (
@@ -131,14 +142,14 @@ export default function Home () {
                 </li>
             </ul>
         </div>
-        <div className='conteudo-jogos'>
+        <div className='jogos'>
             <div>
                 <ul>
-                    <li>
-                        <p>Histórico de partidas</p>
+                    <li className='ativo'>
+                        <p>Meus jogos</p>
                     </li>
                     <li>
-                        <p>Meu jogos</p>
+                        <p>Histórico</p>
                     </li>
                     <li>
                         <p>Conquistas</p>
