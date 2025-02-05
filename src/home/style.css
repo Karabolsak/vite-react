@@ -57,7 +57,6 @@
     list-style: none;
     color: aliceblue;
     font-size: 1em;
-    -webkit-overflow-scrolling: touch; 
     margin: 10px;
     display: flex;
     align-items: center;
