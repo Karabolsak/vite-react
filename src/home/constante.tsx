@@ -7,6 +7,9 @@ import Lol from '../jogos/jogos/lol.png';
 import Minecraft from '../jogos/jogos/minecraft.png'
 import Conquista1 from '../../public/conquista1.png';
 import Estrelas from '../../public/estrelas.png';
+import Games from '../../public/games.png';
+
+
 
 const Menu = () => {
 
@@ -34,7 +37,58 @@ const Menu = () => {
                             ))}
                             </div>;
             case 'Histórico':
-                return <div>Histórico</div>;            
+                return <div>
+                            <ul className='conteudoConquista'>
+                                    <motion.li
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4, delay: 0.3 }}                                    
+                                    >
+                                            <div className='conquista'>
+                                                <img src={Games} alt="Primeira Conquista" className='img-conquista'/>
+                                            <div>
+                                                <h1>Nome do jogo</h1>
+                                                <p>começou a jogar em ../../....</p>
+                                            </div>
+                                            <div>
+                                                <img src={Forza} alt="Primeira Conquista" className='img-jogo'/>
+                                            </div>
+                                        </div>
+                                    </motion.li>
+                                    <motion.li
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4, delay: 0.3 }}                                    
+                                    >
+                                            <div className='conquista'>
+                                                <img src={Games} alt="Primeira Conquista" className='img-conquista'/>
+                                            <div>
+                                                <h1>Nome do jogo</h1>
+                                                <p>começou a jogar em ../../....</p>
+                                            </div>
+                                            <div>
+                                                <img src={Minecraft} alt="Primeira Conquista" className='img-jogo'/>
+                                            </div>
+                                        </div>
+                                    </motion.li>
+                                    <motion.li
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4, delay: 0.3 }}                                    
+                                    >
+                                            <div className='conquista'>
+                                                <img src={Games} alt="Primeira Conquista" className='img-conquista'/>
+                                            <div>
+                                                <h1>Nome do jogo</h1>
+                                                <p>começou a jogar em ../../....</p>
+                                            </div>
+                                            <div>
+                                                <img src={Lol} alt="Primeira Conquista" className='img-jogo'/>
+                                            </div>
+                                        </div>
+                                    </motion.li>
+                            </ul>
+                        </div>;            
             case 'Conquistas':
                 return <div>
                             <ul className='conteudoConquista'>
@@ -89,7 +143,7 @@ const Menu = () => {
                                 </ul>
                         </div>;
             case 'Pet':
-                return <div>Conteúdo do Pet</div>;
+                return <div>Animal</div>;
             default:
                 return <div>Selecione uma opção do menu</div>;
         }
@@ -102,14 +156,12 @@ const Menu = () => {
                     <li
                         key={item}
                         className={activeItem === item ? 'ativo' : ''}
-                        onClick={() => setActiveItem(item)} // Define o item ativo ao clicar
+                        onClick={() => setActiveItem(item)} 
                     >
                         <p>{item}</p>
                     </li>
                 ))}
             </ul>
-
-            {/* Aqui renderizamos o conteúdo baseado no item ativo */}
             <div className="Conteudo">
                 {renderContent()}
             </div>

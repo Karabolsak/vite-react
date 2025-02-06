@@ -58,9 +58,13 @@
     border-radius: 20px;
 }
 .img-conquista {
-    border-radius: 30px;
     width: 60px;
     height: 60px;
+}
+.img-jogo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
 }
 .conteudoConquista li {
     margin-bottom: 10px;
@@ -71,7 +75,7 @@
     font-weight: 300;
 }
 .conquista p {
-    margin: 10px;
+    margin: 0;
     color: aliceblue;
     font-style: italic;
 }
