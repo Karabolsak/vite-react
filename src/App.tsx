@@ -10,7 +10,7 @@ import Social from "./navegacao/index.tsx";
 import NavegacaoSuperior from "./superior/superior.tsx";
 import Notificacao from "./notificacoes/index.tsx";
 
-import { AuthProvider } from "./authContext.tsx";
+import { AuthProvider } from "../src/authContext.tsx";
 import Login from "../src/login/index.tsx";
 import ProtectedRoute from "../src/rotaPrincipal.tsx";
 
