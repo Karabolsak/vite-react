@@ -25,10 +25,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }, []);
 
     const login = async (email: string, password: string) => {
-        await account.createEmailPasswordSession(email, password);
+        await account.createEmailPasswordSession(email, password);  // ✅ Correção aqui
         const currentUser = await account.get();
         setUser(currentUser);
-    };   
+    };
 
     const logout = async () => {
         await account.deleteSession("current");
