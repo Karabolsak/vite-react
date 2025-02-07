@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }, []);
 
     const login = async (email: string, password: string) => {
-        await account.createEmailPasswordSession(email, password);  // ✅ Correção aqui
+        await account.createEmailPasswordSession(email, password); 
         const currentUser = await account.get();
         setUser(currentUser);
     };
