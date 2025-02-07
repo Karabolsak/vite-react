@@ -9,8 +9,6 @@ import Conquista1 from '../../public/conquista1.png';
 import Estrelas from '../../public/estrelas.png';
 import Games from '../../public/games.png';
 
-
-
 const Menu = () => {
 
     const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
