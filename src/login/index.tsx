@@ -18,7 +18,7 @@ const Login = () => {
                     <button onClick={logout}>Sair</button>
                 </div>
             ) : (
-                <div>
+                <div className="naoLogado">
                     <h2>Login</h2>
                     <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />

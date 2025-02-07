@@ -3,3 +3,6 @@
     align-self: center;
     justify-content: space-between;
 }
+.naoLogado {
+    background-color: aqua;
+}
