@@ -12,7 +12,7 @@ import Notificacao from "./notificacoes/index.tsx";
 
 
 
-const Dashboard = () => <h1>Área Protegida</h1>;
+
 
 const App = () => {
   return (
@@ -22,7 +22,6 @@ const App = () => {
         <div className="content">
           <Routes>            
             <Route path="/home" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/jogos" element={<Jogos />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/estatistica" element={<Estatistica />} />
