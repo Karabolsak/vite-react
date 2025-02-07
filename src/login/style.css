@@ -1,8 +1,49 @@
-.logado {
-    display: flex;
-    align-self: center;
-    justify-content: space-between;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.naoLogado {
-    background-color: aqua;
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Remove qualquer rolagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./imagens/logoLogin.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 380px; 
+    min-height: 300px; 
+    padding: 20px;
+    background-color: rgba(104, 104, 104, 0.664); 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+    margin-top: 100px;
+}
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0;
+}
+li {
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.ativo {
+    background: #666;
+    color: white;
 }

@@ -1,11 +1,8 @@
 :root {
-  max-width: 360px;
-  max-height: 640px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   align-items: center;
 }
-body {
+/* body {
   background-color: rgb(41, 40, 40);
-}
+} */
