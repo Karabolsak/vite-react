@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../autenticacao.tsx";
+import { useAuth } from "../authContext.tsx";
 
 const Login = () => {
     const { user, login, logout } = useAuth();
@@ -13,7 +13,7 @@ const Login = () => {
     return (
         <div>
             {user ? (
-                <div>
+                <div className="logado">
                     <h2>Bem-vindo, {user.email}!</h2>
                     <button onClick={logout}>Sair</button>
                 </div>

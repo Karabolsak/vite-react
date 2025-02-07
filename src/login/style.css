@@ -1,0 +1,5 @@
+.logado {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
