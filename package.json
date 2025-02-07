@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
     "appwrite": "^17.0.0",
     "axios": "^1.7.9",
     "firebase": "^11.3.0",
