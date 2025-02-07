@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../authContext.tsx";
+import { useAuth } from "../../src/authContext.tsx";
 
 const Login = () => {
     const { user, login, logout } = useAuth();
