@@ -21,7 +21,7 @@ const App = () => {
         <NavegacaoSuperior />
         <div className="content">
           <Routes>            
-            <Route path="/" elemen={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/jogos" element={<Jogos />} />
             <Route path="/mission" element={<Mission />} />
