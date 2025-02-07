@@ -47,3 +47,18 @@ li {
     background: #666;
     color: white;
 }
+h1 {
+    color: aqua;
+    text-shadow: 0px 1px 20px rgb(255 255 255);
+}
+h2 {
+    color: aquamarine;
+    margin-bottom: 40px;
+    text-shadow: 0px 1px 20px rgb(0 0 0);
+    font-size: 2em;
+}
+.conteudo form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
