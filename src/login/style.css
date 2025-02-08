@@ -38,10 +38,10 @@ ul {
 }
 li {
     cursor: pointer;
+    width: 150px;
     padding: 10px 20px;
-    background: #fff;
     border-radius: 5px;
-    transition: background 0.3s;
+
 }
 .ativo {
     background: #666;
@@ -61,4 +61,27 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+}
+.entradas {
+  /*  background-color: rgb(255 96 0 / 38%); */
+   background-color: rgba(255, 255, 255, 0.788);
+   width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+    border-color: transparent;
+}
+.entradas:focus {
+    background-color: rgba(248, 165, 71, 0.774);
+}
+.botaoEntrar {
+    width: 100px;
+    border-radius: 10px;
+    border-color: transparent;
+    padding: 10px;
+}
+.botaoEntrar:hover {
+    background-color: bisque;
 }

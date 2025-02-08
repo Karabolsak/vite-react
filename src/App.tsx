@@ -1,23 +1,33 @@
 import "./App.css";
-//    import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //    import Jogos from "./jogos/index.tsx";
 //    import Mission from "./mission/index.tsx";
 //    import Navegacao from "./navegacao/index.tsx";
 //    import Estatistica from "./estatistica/index.tsx";
 //    import Conectado from "./conectados/index.tsx";
-//    import Home from "./home/index.tsx";
+import Home from "./home/index.tsx";
 //    import Social from "./navegacao/index.tsx";
 //    import NavegacaoSuperior from "./superior/superior.tsx";
 //    import Notificacao from "./notificacoes/index.tsx";
 
-
 import Login from "./login/index";
-
+import ProtectedRoute from "./protecaoRota.tsx";
 
 const App = () => {
   return (
     <>
-      <Login />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login /> } />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/home" element={<Home /> } />
+          </Route>
+        </Routes>
+
+      </Router>
+
+
+
       
     </>
  

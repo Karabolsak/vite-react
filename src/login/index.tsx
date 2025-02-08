@@ -1,15 +1,17 @@
 import './style.css';
 import { useState } from 'react';
 import { supabase } from '../clienteSupabase.tsx';
+import { useNavigate } from 'react-router-dom';
+
 
 const Menu = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [activeItem, setActiveItem] = useState<string>('Entrar');
-
-    const menuItems = ['Entrar', 'Primeiro acesso'];
+    const [activeItem, setActiveItem] = useState<string>('Log in');
+    const navigate = useNavigate();
+    const menuItems = ['Log in', 'Registrar-se'];
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -25,22 +27,19 @@ const Menu = () => {
             setError(error.message);
         } else {
             console.log('Usuário logado!', data);
+            navigate('/home');
         }
 
         setLoading(false);
     };
 
-    const handleLogout = async () => {
-        await supabase.auth.signOut();
-        alert("Usuário deslogado!");
-    };
+    
 
     const renderContent = () => {
         switch (activeItem) {
-            case 'Entrar':
+            case 'Log in':
                 return (
                 <>
-                
                     <h2>Seja bem vindo</h2>
                     <div className='conteudo'>
                         
@@ -50,6 +49,7 @@ const Menu = () => {
                                 placeholder="Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
+                                className='entradas'
                                 required
                             />
                             <input
@@ -57,21 +57,45 @@ const Menu = () => {
                                 placeholder="Senha"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                className='entradas'
                                 required
                             />
-                            <button type="submit" disabled={loading}>
+                            <button type="submit" disabled={loading} className='botaoEntrar'>
                                 {loading ? 'Carregando...' : 'Entrar'}
                             </button>
                             {error && <p className="error">{error}</p>}
                         </form>
-                        <button onClick={handleLogout}>Sair</button>
                     </div></>
                 );
-            case 'Primeiro acesso':
+            case 'Registrar-se':
                 return (
+                    <>
+                    <h2>Seja bem vindo</h2>
                     <div className='conteudo'>
-                        <p>Página de primeiro acesso em construção...</p>
-                    </div>
+                        
+                        <form onSubmit={handleLogin}>
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className='entradas'
+                                required
+                            />
+                            <input
+                                type="password"
+                                placeholder="Senha"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className='entradas'
+                                required
+                            />
+                            <button type="submit" disabled={loading} className='botaoEntrar'>
+                                {loading ? 'Carregando...' : 'Entrar'}
+                            </button>
+                            {error && <p className="error">{error}</p>}
+                        </form>
+                    </div></>
                 );
             default:
                 return <div>Selecione uma opção do menu</div>;
