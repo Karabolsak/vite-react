@@ -13,14 +13,14 @@ const Menu = () => {
 
     const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
     
-    const [activeItem, setActiveItem] = useState<string>('Meus jogos');
+    const [activeItem, setActiveItem] = useState<string>('Jogos');
 
 
-    const menuItems = ['Meus jogos', 'Histórico', 'Conquistas', 'Pet'];
+    const menuItems = ['Jogos', 'Histórico', 'Conquistas', 'Pet'];
 
     const renderContent = () => {
         switch (activeItem) {
-            case 'Meus jogos':
+            case 'Jogos':
                 return <div className='conteudoJogos'>
                             {Jogos.map((jogo, index) => (
                                 <motion.img 
@@ -141,7 +141,7 @@ const Menu = () => {
                                 </ul>
                         </div>;
             case 'Pet':
-                return <div>Animal</div>;
+                return <div className='pet'>Animal</div>;
             default:
                 return <div>Selecione uma opção do menu</div>;
         }

@@ -5,8 +5,8 @@
     align-items: center;
     color: aliceblue;
 }
-.principal h3 {
-    margin-top: 0px;
+h3 {
+    color: aliceblue;
 }
 .perfil-container {
     display: flex;
@@ -59,7 +59,7 @@
     justify-content: center;
 }
 .jogos {
-    background-color: rgba(87, 87, 87, 0.281);
+    background-color: rgba(87, 87, 87);
     border-radius: 10px;
 }
 .jogos li {
