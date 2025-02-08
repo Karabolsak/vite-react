@@ -85,3 +85,10 @@ h2 {
 .botaoEntrar:hover {
     background-color: bisque;
 }
+
+
+
+.toggle-link {
+    font-size: 1.3em;
+    padding-top: 10px;
+}
