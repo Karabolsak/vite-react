@@ -2,8 +2,7 @@ import './style.css'
 import Usuario from '../home/usuario/usuario.jpg';
 import Logo from './usuario/logo.png';
 import { motion } from 'framer-motion';
-import Menu from './constante.tsx'
-import Tab from '../superior/superior.tsx';
+import Menu from './constante.tsx';
 
 import jogos from '../../public/assets/joystick_1.png';
 import estatistica from '../../public/assets/statistics_1.png';
@@ -17,6 +16,10 @@ import conectadoAtivo from '../../public/assets/conection_2.png';
 import homeAtivo from '../../public/assets/home_2.png';
 import missionAtivo from '../../public/assets/mission_2.png';
 
+import Social from '../../public/assets/social.png';
+import LogoNav from '../../Squad.png';
+import Config from '../../public/assets/config_1.png';
+
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -28,13 +31,39 @@ export default function Home () {
         setActive(name);
         navigate(path);
     };
+    const handleSocialClick = () => {
+        navigate('/Notificacao');
+    };
 
     return (
         <>
-        <div className='containerTop'>
-            <Tab />
-        </div>
+        
         <div className='telaCompleta'>
+                <div className='container'>
+                    <ul>
+                        <li>
+                            <img 
+                                src={Social} 
+                                alt="Social" 
+                                className='tab-usuario' 
+                                onClick={handleSocialClick}
+                            />
+                        </li>
+                        <li>
+                            <img 
+                            src={LogoNav} 
+                            alt="Logo" 
+                            className='tab-logo' />
+                        </li>
+                        <li>
+                            <img 
+                            src={Config} 
+                            alt="Configuração" 
+                            className='tab-img' />
+                        </li>
+                    </ul>
+                </div>
+
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}

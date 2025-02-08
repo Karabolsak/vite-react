@@ -26,8 +26,7 @@ ul {
     display: grid; 
     justify-content: center;
     gap: 20px; 
-    padding-bottom: 10px;
-    overflow-x: auto; 
+    padding-bottom: 10px; 
     scroll-snap-type: x mandatory; 
     grid-template-columns: 90px 90px 90px;
     max-height: 35vh;
