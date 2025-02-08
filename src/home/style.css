@@ -95,10 +95,12 @@ h3 {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(0 0 0 / 67%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-flex: 1;
-overflow-y: auto;
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
 
 }
