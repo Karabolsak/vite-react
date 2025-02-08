@@ -9,7 +9,7 @@ import Nav from '../navegacao/index.tsx'
 export default function Home () {
     return (
         <>
-        <div>
+        <div className='containerTop'>
             <Tab />
         </div>
         <div className='telaCompleta'>
@@ -144,7 +144,7 @@ export default function Home () {
                     <Menu />
                 </motion.div>
         </div>
-        <div>
+        <div className='containerBot'>
             <Nav />
         </div>
     </>
