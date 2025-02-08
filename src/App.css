@@ -7,7 +7,4 @@
     box-sizing: border-box; 
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
-    padding: 2rem;
-    max-width: 360px;
-    max-height: 640px;
 }
