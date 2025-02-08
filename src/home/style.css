@@ -98,10 +98,6 @@ h3 {
     height: 100vh;
     background-color: rgb(0 0 0 / 67%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    flex: 1;
-    overflow-y: auto;
-    
-
 }
 .bottom-nav {
     position: fixed;
