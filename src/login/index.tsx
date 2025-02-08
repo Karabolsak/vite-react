@@ -2,6 +2,7 @@ import './style.css';
 import { useState } from 'react';
 import { supabase } from '../clienteSupabase.tsx';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../../Squad.png';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -55,6 +56,7 @@ const Login = () => {
 
     return (
         <div className="principal">
+            <img src={Logo} className='logo' />
             <h2>{isRegistering ? 'Criar Conta' : 'Seja Bem-Vindo'}</h2>
             <div className='conteudo'>
                 <form onSubmit={isRegistering ? handleSignUp : handleLogin}>
