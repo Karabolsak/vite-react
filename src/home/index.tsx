@@ -12,7 +12,6 @@ export default function Home () {
         <div className='containerTop'>
             <Tab />
         </div>
-<div className='exemplo'>
         <div className='telaCompleta'>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -144,7 +143,6 @@ export default function Home () {
                         >
                     <Menu />
                 </motion.div>
-        </div>
         </div>
         <div className='containerBot'>
             <Nav />
