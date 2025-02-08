@@ -5,43 +5,57 @@
     align-items: center;
     color: aliceblue;
 }
+
 h3 {
     color: aliceblue;
 }
+
 .perfil-container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 15px;
 }
+
 .usuario-foto {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: 2px solid aliceblue;
 }
+
 .info-container {
-        display: flex;
-        flex-direction: column;
-        align-content: flex-end;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
+
 .info-container img {
     max-width: 30px;
     max-height: 30px;
 }
+
+.conteudo {
+    flex: 1;
+    width: 100%;
+    padding: 60px 20px; /* Ajuste para evitar sobreposição */
+    overflow-y: auto;
+    color: aliceblue;
+}
+
 .conteudo p {
     margin: 0;
     margin-bottom: 2.5px;
-    color: aliceblue;
     font-weight: bold;
     font-size: 0.8em;
 }
+
 .conteudo h4 {
     margin: 0;
 }
+
 .conteudo ul {
     display: flex;
     gap: 30px;
@@ -50,67 +64,83 @@ h3 {
     margin: 0;
     padding: 0;
 }
+
 .conteudo li {
     list-style: none;
-    color: aliceblue;
     width: auto;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .jogos {
     background-color: rgba(87, 87, 87);
     border-radius: 10px;
 }
+
 .jogos li {
     list-style: none;
-    color: aliceblue;
     font-size: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;  
+    padding: 10px;
 }
+
 .jogos li:hover {
     background-color: rgba(104, 104, 104, 0.664);
-    border-radius: 10px;margin: 5px;
+    border-radius: 10px;
+    margin: 5px;
 }
+
 .ativo {
     background-color: rgba(133, 132, 132);
-    border-radius: 10px;margin: 5px;
+    border-radius: 10px;
+    margin: 5px;
 }
+
 .jogos ul {
     display: flex;
     margin: 0;
-    padding: 0;
-    justify-content: space-between;
     padding: 5px;
+    justify-content: space-between;
 }
+
 .jogos p {
     margin: 0px;
 }
+
+/* Tela Completa Respeitando NavBar e TopBar */
 .telaCompleta {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(0 0 0 / 67%);
+    background-color: rgba(0, 0, 0, 0.67);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     flex: 1;
     overflow-y: auto;
-    
-
+    padding-top: 50px; /* Espaço para TopBar */
+    padding-bottom: 70px; /* Espaço para NavBottom */
 }
 
-
-
-.containerBot {
-    width: 100vw;
-    height: 70px;
-}
+/* NavBar Superior */
 .containerTop {
+    position: fixed;
+    top: 0;
     width: 100vw;
     height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+/* NavBar Inferior */
+.containerBot {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
