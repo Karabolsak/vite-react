@@ -1,6 +1,6 @@
 import './style.css';
 import Social from './assets/social.png';
-import Logo from './assets/logo.png';
+import Logo from '../../Squad.png';
 import Config from './assets/config_1.png';
 
 import { useNavigate } from 'react-router-dom';

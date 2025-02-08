@@ -76,7 +76,7 @@ h3 {
     border-radius: 10px;margin: 5px;
 }
 .ativo {
-    background-color: rgba(104, 104, 104, 0.664);
+    background-color: rgba(133, 132, 132);
     border-radius: 10px;margin: 5px;
 }
 .jogos ul {
@@ -88,9 +88,6 @@ h3 {
 }
 .jogos p {
     margin: 0px;
-}
-.jogos .ativo {
-    background-color: aqua;
 }
 .telaCompleta {
     display: flex;

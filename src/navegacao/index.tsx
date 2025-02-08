@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function NavBottom() {
-  const [active, setActive] = useState<string>("home"); // Home ativo por padrão
+  const [active, setActive] = useState<string>("home");
   const navigate = useNavigate();
 
   const handleNavigation = (path: string, name: string) => {

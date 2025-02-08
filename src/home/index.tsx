@@ -4,6 +4,7 @@ import Logo from './usuario/logo.png';
 import { motion } from 'framer-motion';
 import Menu from './constante.tsx'
 import Tab from '../superior/superior.tsx';
+import Nav from '../navegacao/index.tsx'
 
 export default function Home () {
     return (
@@ -142,6 +143,9 @@ export default function Home () {
                         >
                     <Menu />
                 </motion.div>
+        </div>
+        <div>
+            <Nav />
         </div>
     </>
     )

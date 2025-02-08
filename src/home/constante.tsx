@@ -11,7 +11,7 @@ import Games from '../../public/games.png';
 
 const Menu = () => {
 
-    const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
+    const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
     
     const [activeItem, setActiveItem] = useState<string>('Jogos');
 
