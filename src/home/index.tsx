@@ -165,51 +165,53 @@ export default function Home () {
                         >
                     <Menu />
                 </motion.div>
+                <nav className="bottom-nav">
+                    <ul>
+                        <li>
+                        <img
+                            src={active === "jogos" ? jogosAtivo : jogos}
+                            alt="jogos"
+                            className={`navegadores ${active === "jogos" ? "active" : ""}`}
+                            onClick={() => handleNavigation("/jogos", "jogos")}
+                        />
+                        </li>
+                        <li>
+                        <img
+                            src={active === "estatistica" ? estatisticaAtivo : estatistica}
+                            alt="estatisticas"
+                            className={`navegadores ${active === "estatistica" ? "active" : ""}`}
+                            onClick={() => handleNavigation("/estatistica", "estatistica")}
+                        />
+                        </li>
+                        <li>
+                        <img
+                            src={active === "conectado" ? conectadoAtivo : conectado}
+                            alt="conexões"
+                            className={`navegadores ${active === "conectado" ? "active" : ""}`}
+                            onClick={() => handleNavigation("/conectado", "conectado")}
+                        />
+                        </li>
+                        <li>
+                        <img
+                            src={active === "mission" ? missionAtivo : mission}
+                            alt="configuracoes"
+                            className={`navegadores ${active === "mission" ? "active" : ""}`}
+                            onClick={() => handleNavigation("/mission", "mission")}
+                        />
+                        </li>
+                        <li>
+                        <img
+                            src={active === "home" ? homeAtivo : home}
+                            alt="home"
+                            className={`navegadores ${active === "home" ? "active" : ""}`}
+                            onClick={() => handleNavigation("/home", "home")}
+                        />
+                        </li>
+                    </ul>
+                </nav>
+        
         </div>
-        <nav className="bottom-nav">
-      <ul>
-        <li>
-          <img
-            src={active === "jogos" ? jogosAtivo : jogos}
-            alt="jogos"
-            className={`navegadores ${active === "jogos" ? "active" : ""}`}
-            onClick={() => handleNavigation("/jogos", "jogos")}
-          />
-        </li>
-        <li>
-          <img
-            src={active === "estatistica" ? estatisticaAtivo : estatistica}
-            alt="estatisticas"
-            className={`navegadores ${active === "estatistica" ? "active" : ""}`}
-            onClick={() => handleNavigation("/estatistica", "estatistica")}
-          />
-        </li>
-        <li>
-          <img
-            src={active === "conectado" ? conectadoAtivo : conectado}
-            alt="conexões"
-            className={`navegadores ${active === "conectado" ? "active" : ""}`}
-            onClick={() => handleNavigation("/conectado", "conectado")}
-          />
-        </li>
-        <li>
-          <img
-            src={active === "mission" ? missionAtivo : mission}
-            alt="configuracoes"
-            className={`navegadores ${active === "mission" ? "active" : ""}`}
-            onClick={() => handleNavigation("/mission", "mission")}
-          />
-        </li>
-        <li>
-          <img
-            src={active === "home" ? homeAtivo : home}
-            alt="home"
-            className={`navegadores ${active === "home" ? "active" : ""}`}
-            onClick={() => handleNavigation("/home", "home")}
-          />
-        </li>
-      </ul>
-    </nav>
+        
     </>
     )
 }
