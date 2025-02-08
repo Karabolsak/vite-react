@@ -20,7 +20,7 @@ export default function Home () {
                         >
                         <h3>Olá, Gabriel</h3>
                     </motion.div> 
-            <div className='principalHome'>
+                <div className='principalHome'>
                     <div className='perfil-container'>
                         <motion.div 
                             initial={{ opacity: 0, scale: 0.8 }}

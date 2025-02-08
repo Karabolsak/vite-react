@@ -30,9 +30,7 @@ ul {
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
     grid-template-columns: 90px 90px 90px;
-
     max-height: 35vh;
-
 }
 .jogos-imagem {
     width: 90px; 
@@ -51,7 +49,6 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     max-height: 35vh;
 
 }
@@ -87,7 +84,5 @@ ul {
     font-style: italic;
 }
 .pet {
-
     max-height: 35vh;
-
 }
