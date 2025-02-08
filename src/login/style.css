@@ -32,7 +32,7 @@ html, body {
 ul {
     list-style: none;
     display: flex;
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 0;
 }
 li {

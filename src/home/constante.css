@@ -31,7 +31,7 @@ ul {
     scroll-snap-type: x mandatory; 
     grid-template-columns: 90px 90px 90px;
     min-height: 35vh;
-    max-height: 40vh;
+    max-height: 35vh;
     margin-bottom: 15px;
 }
 .jogos-imagem {
@@ -52,7 +52,7 @@ ul {
     flex-direction: column;
     align-items: center;
     min-height: 35vh;
-    max-height: 40vh;
+    max-height: 35vh;
     margin-bottom: 15px;
 }
 .conquista {
@@ -88,6 +88,6 @@ ul {
 }
 .pet {
     min-height: 35vh;
-    max-height: 40vh;
+    max-height: 35vh;
     margin-bottom: 15px;
 }

@@ -110,7 +110,7 @@ export default function Home () {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.7, delay: 0.3 }}
                                 >
-                                    <p>Jogo Preferido</p>
+                                    <p>Destaque</p>
                                     <p>Valorant</p>
                             </motion.div>
                         </li>
