@@ -26,7 +26,6 @@ ul {
     display: grid;
     justify-content: center;
     gap: 20px;
-    padding-bottom: 10px;
     max-height: 35vh;
     grid-template-columns: repeat(3, 90px);
     
