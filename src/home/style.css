@@ -131,7 +131,6 @@ h3 {
     filter: brightness(0.5);
 }
 .container {
-    position: fixed;
     top: 0;
     width: 100vw;
     background-color: #a3a2a2;
