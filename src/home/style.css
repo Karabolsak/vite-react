@@ -1,48 +1,10 @@
 
 
-
-
-/*.container {
-    top: 0;
-    position: fixed;
-    width: 100vw;
-    background-color: #a3a2a2;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-} NEVEGAÇÃO TOP */
-.container ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  gap: 20px;
-}
-.container ul li {
-  list-style: none;
-}
-/* .tab-img {
-    max-height: 30px;
-    cursor: pointer;
-} */
-/* .tab-usuario {
-  max-width: 40px;
-  max-height: 40px;
-  cursor: pointer;
-} */
-/* .tab-logo {
-  max-width: 40px;
-  max-height: 40px;
-} */
-
-
-
-
 /* Alterações */
 
 .conteudoHOME {
+    overflow-x: hidden;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
