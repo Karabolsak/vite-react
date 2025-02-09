@@ -30,7 +30,7 @@ ul {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     white-space: nowrap;
-    max-height: 25vh;
+    max-height: 30vh;
 }
 .jogos-imagem {
     width: 90px; 
