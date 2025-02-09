@@ -41,6 +41,7 @@ ul {
 }
 .Conteudo {
     margin-top: 10px;
+    max-height: 25vh;
 }
 .conteudoConquista {
     list-style: none;
