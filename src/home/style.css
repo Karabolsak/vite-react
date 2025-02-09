@@ -98,9 +98,6 @@ p {
     color: aliceblue;
     padding: 5px;
 }
-.informacoesHOME {
-    
-}
 .navagecaoBOT {
     position: absolute;
     bottom: 0;
@@ -133,7 +130,7 @@ p {
 
 .BOTlista {
     padding: 5px;
-    width: 110px;
+    width: 90px;
 }
 .jogos {
     background-color: rgba(87, 87, 87);

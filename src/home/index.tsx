@@ -90,7 +90,7 @@ export default function Home () {
                             <p>15</p>
                     </motion.div>                                      
             </div>
-            <div className='informacoesHOME'>
+            <div>
                 <ul>
                     <li>
                         <motion.div
@@ -178,10 +178,18 @@ export default function Home () {
                         <img 
                             src={active === "conectado" ? conectadoAtivo : conectado}
                             alt="Conexões" 
-                            className={`navegadores ${active === "conectado" ? "ative" : ""}`}
+                            className={`navegadores ${active === "conectado" ? "active" : ""}`}
                             onClick={() => handleNavigation("/conectado", "conectado")}
                         />
                     </li>    
+                    <li className='BOTlista'>
+                        <img 
+                            src={active === "mission" ? missionAtivo : mission}
+                            alt="Missões"
+                            className={`navegadores ${active === "mission" ? "active" : ""}`}
+                            onClick={() => handleNavigation("/mission", "mission")} 
+                        />
+                    </li>
                     <li className='BOTlista'>
                         <img 
                             src={active === "home" ? homeAtivo : home}
