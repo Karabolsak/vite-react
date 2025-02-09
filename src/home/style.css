@@ -1,63 +1,139 @@
-.principalHome {
+
+
+
+
+/*.container {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    background-color: #a3a2a2;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+} NEVEGAÇÃO TOP */
+.container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 20px;
+}
+.container ul li {
+  list-style: none;
+}
+/* .tab-img {
+    max-height: 30px;
+    cursor: pointer;
+} */
+/* .tab-usuario {
+  max-width: 40px;
+  max-height: 40px;
+  cursor: pointer;
+} */
+/* .tab-logo {
+  max-width: 40px;
+  max-height: 40px;
+} */
+
+
+
+
+/* Alterações */
+
+.conteudoHOME {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: aliceblue;
+    margin: 0px;
+    background-color: rgb(0 0 0 / 67%);
+    width: 100vw;
+    height: 100vh;
+}
+.navegacaoTOP {
+    top: 0;
+    z-index: 500;
+    background-color: #a3a2a2;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 10px;
+}
+.TOP-usuario {
+    max-width: 40px;
+    max-height: 40px;
+    cursor: pointer;
+}
+.TOP-logo {
+    max-width: 40px;
+    max-height: 40px;
+}
+.TOP-img {
+    max-height: 30px;
+    cursor: pointer;
 }
 h3 {
     color: aliceblue;
+    margin-bottom: 10px;
+    font-style: italic;
 }
-.perfil-container {
+.perfilHOME {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 15px;
 }
-.usuario-foto {
+.IMG-user {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: 2px solid aliceblue;
 }
-.info-container {
-        display: flex;
-        flex-direction: column;
-        align-content: flex-end;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-}
-.info-container img {
+.ranking-User {
     max-width: 30px;
     max-height: 30px;
 }
-.conteudo p {
-    margin: 0;
-    margin-bottom: 2.5px;
+p {
     color: aliceblue;
-    font-weight: bold;
-    font-size: 0.8em;
+    padding: 5px;
 }
-.conteudo h4 {
-    margin: 0;
+.informacoesHOME {
+    
 }
-.conteudo ul {
+.navagecaoBOT {
+    position: absolute;
+    bottom: 0;
+    background-color: #a3a2a2;
     display: flex;
-    gap: 30px;
+    justify-content: center; 
     align-items: center;
-    justify-content: center;
+}
+.navegadores {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.navegadores.active {
+    filter: brightness(0.5);
+}
+.navegacaoBOT img {
+    max-width: 40px;
+    max-height: 40px;
+}
+.navegacaoBOT ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-}
-.conteudo li {
-    list-style: none;
-    color: aliceblue;
-    width: auto;
-    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.BOTlista {
+    padding: 5px;
+    width: 110px;
 }
 .jogos {
     background-color: rgba(87, 87, 87);
@@ -89,82 +165,4 @@ h3 {
 }
 .jogos p {
     margin: 0px;
-}
-.telaCompleta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  /*  margin-top: 20px; */
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(0 0 0 / 67%);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    background-color: #a3a2a2;
-    padding: 10px 15px; 
-    width: 100vw;
-    height: 60px;
-    z-index: 1000;
-}
-.bottom-nav img {
-    max-width: 40px;
-    max-height: 40px;
-}
-.bottom-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.bottom-nav li {
-    padding: 0;
-}
-.navegadores {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-.navegadores.active {
-    filter: brightness(0.5);
-}
-.container {
-    top: 0;
-    position: fixed;
-    width: 100vw;
-    background-color: #a3a2a2;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-}
-.container ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  gap: 20px;
-}
-.container ul li {
-  list-style: none;
-}
-.tab-img {
-    max-height: 30px;
-    cursor: pointer;
-}
-.tab-usuario {
-  max-width: 40px;
-  max-height: 40px;
-  cursor: pointer;
-}
-.tab-logo {
-  max-width: 40px;
-  max-height: 40px;
 }

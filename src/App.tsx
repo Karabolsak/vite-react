@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //    import Jogos from "./jogos/index.tsx";
 //    import Mission from "./mission/index.tsx";
 //    import Navegacao from "./navegacao/index.tsx";
-//    import Estatistica from "./estatistica/index.tsx";
+import Estatistica from "./estatistica/index.tsx";
 //    import Conectado from "./conectados/index.tsx";
 import Home from "./home/index.tsx";
 //    import Social from "./navegacao/index.tsx";
@@ -21,6 +21,7 @@ const App = () => {
           <Route path="/" element={<Login /> } />
           <Route element={<ProtectedRoute />}>
             <Route path="/home" element={<Home /> } />
+            <Route path="/estatistica" element={<Estatistica /> } />
           </Route>
         </Routes>
 
