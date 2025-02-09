@@ -73,6 +73,17 @@
     max-height: 30px;
     cursor: pointer;
 }
+.navegacaoTOP ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    list-style: none;
+}
+.navegacaoTOP li {
+    padding: 10px 20px 5px 20px;
+}
 h3 {
     color: aliceblue;
     margin-bottom: 10px;
@@ -98,6 +109,21 @@ p {
     color: aliceblue;
     padding: 5px;
 }
+.informacoesHOME {
+
+}
+.informacoesHOME ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+.informacoesHOME div {
+    display: flex    ;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
 .navagecaoBOT {
     position: absolute;
     bottom: 0;
@@ -105,6 +131,29 @@ p {
     display: flex;
     justify-content: center; 
     align-items: center;
+}
+
+.navegacaoBOT img {
+    max-width: 40px;
+    max-height: 40px;
+}
+.controleBOT {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+}
+.BOTlista {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+.BOTlista img {
+    max-width: 90px;padding: 5px;
+}
+.BOTlista li {
+    max-width: 100px;
 }
 .navegadores {
     width: 50px;
@@ -114,23 +163,6 @@ p {
 }
 .navegadores.active {
     filter: brightness(0.5);
-}
-.navegacaoBOT img {
-    max-width: 40px;
-    max-height: 40px;
-}
-.navegacaoBOT ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.BOTlista {
-    padding: 5px;
-    width: 90px;
 }
 .jogos {
     background-color: rgba(87, 87, 87);

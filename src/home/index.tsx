@@ -90,9 +90,9 @@ export default function Home () {
                             <p>15</p>
                     </motion.div>                                      
             </div>
-            <div>
+            <div className='informacoesHOME'>
                 <ul>
-                    <li>
+                    <li className='informacoesLista'>
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -157,7 +157,7 @@ export default function Home () {
                     <Menu />
             </motion.div>
             <nav className='navagecaoBOT'>
-                <ul>
+                <ul className='controleBOT'>
                     <li className='BOTlista'>
                         <img 
                             src={active === "jogos" ? jogosAtivo : jogos} 
