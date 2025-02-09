@@ -125,7 +125,7 @@ p {
     width: 120px;
 }
 .navagecaoBOT {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background-color: #a3a2a2;
     display: flex;
