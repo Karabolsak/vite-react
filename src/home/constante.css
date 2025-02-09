@@ -30,6 +30,7 @@ ul {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     white-space: nowrap;
+    max-height: 25vh;
 }
 .jogos-imagem {
     width: 90px; 
@@ -41,7 +42,6 @@ ul {
 }
 .Conteudo {
     margin-top: 10px;
-    max-height: 25vh;
 }
 .conteudoConquista {
     list-style: none;
