@@ -1,0 +1,39 @@
+.navagecaoBOT {
+    position: fixed;
+    bottom: 0;
+    background-color: #a3a2a2;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.navegacaoBOT img {
+    max-width: 40px;
+    max-height: 40px;
+}
+.controleBOT {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+}
+.BOTlista {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+.BOTlista img {
+    max-width: 90px;padding: 5px;
+}
+.BOTlista li {
+    max-width: 100px;
+}
+.navegadores {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.navegadores.active {
+    filter: brightness(0.5);
+}

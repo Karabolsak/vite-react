@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//    import Jogos from "./jogos/index.tsx";
+import Jogos from "./jogos/index.tsx";
 //    import Mission from "./mission/index.tsx";
 //    import Navegacao from "./navegacao/index.tsx";
 import Estatistica from "./estatistica/index.tsx";
@@ -22,6 +22,7 @@ const App = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/home" element={<Home /> } />
             <Route path="/estatistica" element={<Estatistica /> } />
+            <Route path="/jogos" element={<Jogos /> } /> 
           </Route>
         </Routes>
 

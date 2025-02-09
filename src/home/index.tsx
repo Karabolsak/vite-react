@@ -14,8 +14,8 @@ import conectadoAtivo from '../../public/assets/conection_2.png';
 import homeAtivo from '../../public/assets/home_2.png';
 import missionAtivo from '../../public/assets/mission_2.png';
 import Social from '../../public/assets/social.png';
-import LogoNav from '../../Squad.png';
 import Config from '../../public/assets/config_1.png';
+import LogoNav from '../../Squad.png';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -28,7 +28,7 @@ export default function Home () {
         navigate(path);
     };
     const handleSocialClick = () => {
-        navigate('/Notificacao');
+        navigate('/');
     };
 
     return (      
