@@ -1,7 +1,9 @@
 .navagecaoBOT {
     position: fixed;
     bottom: 0;
-    background-color: #a3a2a2;
+    background-color: #ffffff;
+    box-shadow: 02px 2px 15px rgba(255, 0, 0, 0.70);
+    border-radius: 10px 10px 0px 0px;
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -23,7 +25,8 @@
     justify-content: center;
 }
 .BOTlista img {
-    max-width: 90px;padding: 5px;
+    max-width: 90px;
+    padding: 5px;
 }
 .BOTlista li {
     max-width: 100px;

@@ -3,11 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 html, body {
     width: 100vw;
-    height: 100vh;
-    overflow: hidden; /* Remove qualquer rolagem */
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +14,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     position: fixed;
+    padding-top: env(safe-area-inset-top);
 }
 .principal {
     display: flex;

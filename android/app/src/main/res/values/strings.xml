@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">vite-react</string>
+    <string name="title_activity_main">vite-react</string>
+    <string name="package_name">App.tsx</string>
+    <string name="custom_url_scheme">App.tsx</string>
+</resources>

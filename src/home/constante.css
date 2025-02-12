@@ -1,26 +1,35 @@
 .jogos {
     margin-left: 10px;
-    margin-left: 10px;
     width: 95vw;
     display: flex;
     justify-content: space-between;
+    background-color: #fffcfc;
+    box-shadow: 2px 2px 6px rgba(255, 0, 0, 0.70);
+    border-radius: 10px;
 }
-ul {
-    gap: 0;
+.ativo {
+    background-color: rgba(204, 204, 204, 0.486);
+    border-radius: 10px;
+}
+.jogos ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    padding: 5px;
+}
+.jogos p {
+    margin: 0px;
 }
 .jogos li {
     list-style: none;
-    color: aliceblue;
+    color: black;
+    font-weight: 500;
     font-size: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px; 
-}
-.jogos li:hover {
-    background-color: rgba(104, 104, 104);
-    border-radius: 10px;
-    margin: 5px;
+    padding: 10px;  
 }
 .conteudoJogos {
     display: grid;
@@ -30,10 +39,10 @@ ul {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     white-space: nowrap;
-    max-height: 30vh;
+    padding-bottom: 20px;
 }
 .jogos-imagem {
-    width: 90px; 
+    width: 90px;
     height: 90px; 
     border-radius: 8px; 
     box-shadow: 0 4px 8px rgb(240, 248, 255, 0.1); 
@@ -49,8 +58,6 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-   
-
 }
 .conquista {
     display: flex;
@@ -58,7 +65,8 @@ ul {
     justify-content: space-between;
     gap: 10px;
     padding: 10px;
-    background-color: rgb(87 87 87);
+    margin: 10px 20px 10px 20px;
+    background-color: rgb(255, 254, 254);
     border-radius: 20px;
 }
 .img-conquista {
@@ -74,13 +82,12 @@ ul {
     width: 100vw;
 }
 .conquista h1 {
-    color: aliceblue;
+    color: black;
     font-size: 1em;
     font-weight: 300;
 }
 .conquista p {
     margin: 0;
-    color: aliceblue;
+    color: black;
     font-style: italic;
 }
-
