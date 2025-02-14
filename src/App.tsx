@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Jogos from "./jogos/index.tsx";
-//    import Mission from "./mission/index.tsx";
+import Mission from "./mission/index.tsx";
 //    import Navegacao from "./navegacao/index.tsx";
 import Estatistica from "./estatistica/index.tsx";
 //    import Conectado from "./conectados/index.tsx";
@@ -23,6 +23,7 @@ const App = () => {
             <Route path="/home" element={<Home /> } />
             <Route path="/estatistica" element={<Estatistica /> } />
             <Route path="/jogos" element={<Jogos /> } /> 
+            <Route path="/mission" element={<Mission /> } /> 
           </Route>
         </Routes>
 

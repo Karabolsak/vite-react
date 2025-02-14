@@ -9,10 +9,9 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [isRegistering, setIsRegistering] = useState(false); // Estado para alternar entre login e registro
+    const [isRegistering, setIsRegistering] = useState(false); 
     const navigate = useNavigate();
 
-    // 🔹 Função para fazer login
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
@@ -27,13 +26,12 @@ const Login = () => {
             setError(error.message);
         } else {
             console.log('Usuário logado!', data);
-            navigate('/home'); // Redireciona para Home após login bem-sucedido
+            navigate('/home'); 
         }
 
         setLoading(false);
     };
 
-    // 🔹 Função para registrar um novo usuário
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
