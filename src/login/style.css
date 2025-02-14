@@ -69,3 +69,6 @@ html, body {
 .logo {
     height: 60px;
 }
+::placeholder {
+    color: black;
+}
