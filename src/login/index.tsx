@@ -9,7 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [isRegistering, setIsRegistering] = useState(false); 
+    const [isRegistering, setIsRegistering] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = async (e: React.FormEvent) => {
@@ -25,8 +25,8 @@ const Login = () => {
         if (error) {
             setError(error.message);
         } else {
-            console.log('Usuário logado!', data);
-            navigate('/home'); 
+            console.log('✅ Usuário logado!', data);
+            navigate('/cadastro');
         }
 
         setLoading(false);
@@ -44,17 +44,19 @@ const Login = () => {
 
         if (error) {
             setError(error.message);
-        } else {
-            console.log('Usuário registrado!', data);
-            alert('Conta criada! Verifique seu email para confirmar.');
+            setLoading(false);
+            return;
         }
+
+        console.log('✅ Usuário registrado!', data);
+        alert('Conta criada! Verifique seu email para confirmar.');
 
         setLoading(false);
     };
 
     return (
         <div className="principal">
-            <img src={Logo} className='logo' />
+            <img src={Logo} className='logo' alt="Logo" />
             <h2>{isRegistering ? 'Criar Conta' : 'Seja Bem-Vindo'}</h2>
             <div className='conteudo'>
                 <form onSubmit={isRegistering ? handleSignUp : handleLogin}>

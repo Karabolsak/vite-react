@@ -64,7 +64,7 @@ const Navbar = () => {
                         src={active === "mission" ? missionAtivo : mission}
                         alt="Missões"
                         className={`navegadores ${active === "mission" ? "active" : ""}`}
-                        onClick={() => handleNavigation("/mission", "mission")}
+                        onClick={() => handleNavigation("/cadastro", "mission")}
                     />
                 </li>
                 <li className="BOTlista">

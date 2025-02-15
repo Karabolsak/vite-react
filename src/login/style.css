@@ -72,3 +72,6 @@ html, body {
 ::placeholder {
     color: black;
 }
+.toggle-link {
+    color: aliceblue;
+}

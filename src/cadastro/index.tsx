@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from '../clienteSupabase';
+import { supabase } from "../clienteSupabase";
 import "./style.css";
 import Logo from "../../Squad.png";
+
+interface User {
+  id: string;
+  email?: string;
+}
 
 export default function Cadastro() {
   const navigate = useNavigate();
   const [nome, setNome] = useState("");
-  const [nickname, setNickname] = useState("");
+  const [nomeUsuario, setNomeUsuario] = useState("");
   const [jogoSelecionado, setJogoSelecionado] = useState("");
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [, setIsLoading] = useState(true);
 
   const jogos = ["Minecraft", "Fortnite", "Valorant", "GTA V"];
 
@@ -19,21 +25,28 @@ export default function Cadastro() {
       const { data, error } = await supabase.auth.getUser();
 
       if (error || !data?.user) {
+        console.error("❌ Erro ao obter usuário autenticado:", error);
         navigate("/login");
         return;
       }
 
+      console.log("👤 UID do usuário autenticado:", data.user.id);
       setUser(data.user);
 
       const { data: userInfo, error: fetchError } = await supabase
-        .from("informacoesComplementares")
-        .select("nomeCompleto")
-        .eq("uid", data.user.id)
-        .single();
+        .from("complementares")
+        .select("*")
+        .eq("usuario", data.user.id)
 
-      if (!fetchError && userInfo?.nomeCompleto) {
-        navigate("/home");
+      console.log("🔍 Resultado da busca via Supabase:", userInfo);
+      if (fetchError) console.error("⚠️ Erro ao buscar usuário no banco:", fetchError);
+
+      if (!userInfo || userInfo.length === 0) {
+        navigate("/cadastro");
+        return;
       }
+
+      setIsLoading(false);
     };
 
     checkUser();
@@ -41,6 +54,12 @@ export default function Cadastro() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!nome || !nomeUsuario || !jogoSelecionado) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
     setLoading(true);
 
     if (!user?.id) {
@@ -49,23 +68,29 @@ export default function Cadastro() {
       return;
     }
 
-    const { error } = await supabase.from("InformacoesComplementares").insert([
-      {
-        uid: user.id,
-        nomeCompleto: nome,
-        nickName: nickname, // Corrigido para minúsculas
-        jogoPreferido: jogoSelecionado,
-      },
-    ]);
+    try {
+      console.log("🛠 Criando novo registro...");
+      const { error } = await supabase
+        .from("complementares")
+        .insert([
+          {
+            usuario: user.id,
+            nomeCompleto: nome,
+            nomeUsuario: nomeUsuario,
+            jogoPreferido: jogoSelecionado,
+            cadastroCompleto: true,
+          },
+        ]);
 
-    if (error) {
-      alert("Erro ao cadastrar: " + error.message);
-    } else {
-      alert("Cadastro realizado com sucesso!");
+      if (error) {
+        throw error;
+      }
+
+      alert("✅ Cadastro salvo com sucesso!");
       navigate("/home");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -84,10 +109,10 @@ export default function Cadastro() {
           />
           <input
             type="text"
-            placeholder="Nickname"
+            placeholder="Nome de usuário"
             className="entradas"
-            value={nickname}
-            onChange={(e) => setNickname(e.target.value)}
+            value={nomeUsuario}
+            onChange={(e) => setNomeUsuario(e.target.value)}
             required
           />
 
