@@ -9,6 +9,9 @@ import Conquista1 from '../../public/conquista1.png';
 import Estrelas from '../../public/estrelas.png';
 import Games from '../../public/games.png';
 
+
+
+
 const Menu = () => {
 
     const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
@@ -16,7 +19,7 @@ const Menu = () => {
     const [activeItem, setActiveItem] = useState<string>('Jogos');
 
 
-    const menuItems = ['Jogos', 'Histórico', 'Conquistas', 'Pet'];
+    const menuItems = ['Jogos', 'Histórico', 'Conquistas'];
 
     const renderContent = () => {
         switch (activeItem) {
@@ -140,8 +143,7 @@ const Menu = () => {
                                     </motion.li>
                                 </ul>
                         </div>;
-            case 'Pet':
-                return <div className='pet'>Animal</div>;
+            
             default:
                 return <div>Selecione uma opção do menu</div>;
         }

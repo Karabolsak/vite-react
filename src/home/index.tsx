@@ -16,6 +16,7 @@ export default function Home() {
 
     const [nomeCompleto, setNomeCompleto] = useState("Carregando...");
     const [jogoPreferido, setJogoPreferido] = useState("Carregando...");
+    const [nomeUsuario, setNomeUsuario] = useState("Carregando...");
 
     useEffect(() => {
         const fetchNomeCompleto = async () => {
@@ -29,7 +30,7 @@ export default function Home() {
                 const userId = userData.user.id;
                 const { data, error } = await supabase
                     .from("complementares")
-                    .select("nomeCompleto, jogoPreferido")
+                    .select("nomeCompleto, jogoPreferido, nomeUsuario")
                     .eq("usuario", userId)
                     .limit(1);
 
@@ -38,6 +39,7 @@ export default function Home() {
                 } else if (data.length > 0) {
                     setNomeCompleto(data[0].nomeCompleto || "");
                     setJogoPreferido(data[0].jogoPreferido || "");
+                    setNomeUsuario(data[0]. nomeUsuario || "");
                 } else {
                     setNomeCompleto("");
                     setJogoPreferido("");
@@ -65,9 +67,7 @@ export default function Home() {
             </motion.div>
 
             <div className='perfilHOME'>
-                <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.2, delay: 0.3 }}>
-                    <img src={Usuario} alt="foto de usuário" className='IMG-user' />
-                </motion.div>
+                
 
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
                     <div className='perfilHOME-P'>
@@ -118,7 +118,7 @@ export default function Home() {
                     <li>
                         <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.3 }}>
                             <h1>Nickname</h1>
-                            <h3>BigBigBig</h3>
+                            <h3> {nomeUsuario} </h3>
                         </motion.div>
                     </li>
                     <li>
