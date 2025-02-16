@@ -1,6 +1,5 @@
 import './style.css'
 import Bottom from '../bottom/index.tsx';
-import Usuario from '../home/usuario/usuario.jpg';
 import Logo from './usuario/logo.png';
 import { motion } from 'framer-motion';
 import Menu from './constante.tsx';
