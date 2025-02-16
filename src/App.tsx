@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Jogos from "./jogos/index.tsx";
 import Cadastro from "./cadastro/index.tsx";
 import Estatistica from "./estatistica/index.tsx";
@@ -20,8 +20,7 @@ const App = () => {
 const AppRoutes = () => {
   const [user, setUser] = useState<any>(null);
   const [isUserRegistered, setIsUserRegistered] = useState<boolean | null>(null);
-  const [loading, setLoading] = useState(true); // Adicionado para evitar navegação antes da verificação
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     async function fetchUser() {
@@ -38,7 +37,7 @@ const AppRoutes = () => {
         console.log("UID do usuário:", session.user.id);
         setUser(session.user);
 
-        // Busca na tabela complementares
+        
         const { data, error } = await supabase
           .from("complementares")
           .select("usuario")
@@ -62,7 +61,6 @@ const AppRoutes = () => {
     fetchUser();
   }, []);
 
-  // Se estiver carregando, mostra um loading para evitar redirecionamentos errados
   if (loading) {
     return <div>Carregando...</div>;
   }
@@ -72,15 +70,11 @@ const AppRoutes = () => {
       <Route path="/" element={<Login />} />
       <Route path="/login" element={<Login />} />
       <Route path="/cadastro" element={user ? <Cadastro /> : <Navigate to="/login" />} />
-
-      {/* Protege as rotas, mas agora permite navegação normal */}
       <Route element={<ProtectedRoute />}>
         <Route path="/home" element={<Home />} />
         <Route path="/estatistica" element={<Estatistica />} />
         <Route path="/jogos" element={<Jogos />} />
       </Route>
-
-      {/* Se o usuário não está registrado, redireciona para cadastro */}
       {isUserRegistered === false && <Navigate to="/cadastro" replace />}
     </Routes>
   );
