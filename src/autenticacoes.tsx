@@ -64,8 +64,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       await supabase.auth.signOut();
       setUser(null);
       setIsUserRegistered(null);
+      localStorage.removeItem("user");
+      localStorage.removeItem("isUserRegistered");
       console.log("👋 Usuário deslogado com sucesso!");
-      navigate("/login"); // ✅ Agora funciona dentro do componente que usa logout
+      navigate("/login");
     } catch (error) {
       console.error("❌ Erro ao deslogar:", error);
     }

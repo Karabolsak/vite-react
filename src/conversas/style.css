@@ -9,3 +9,58 @@
     width: 100vw;
     height: 100vh;
 }
+.principalConversas h1 {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-principal);
+}
+.principalPETS {
+    margin-top: 50px;
+    width: 250px;
+    height: 200px;
+}
+.conteudoConversas {
+    width: 100vw;
+    padding: 0px 10px 0px 10px;
+}
+.conteudoConversas ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.conteudoConversas p {
+    color: aliceblue;
+    font-family: var(--font-principal);
+    font-size: large;
+}
+.conteudoConversas img {
+    height: 20px;
+    width: 20px;
+}
+.conversas {
+    background-color: #f0f8ff1c;
+    margin: 15px 10px 0px 10px;
+    border-radius: 10px;
+    box-shadow: 02px 2px 15px rgba(255, 0, 0, 0.70);
+}
+.conversas ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.conversas img {
+    height: 50px;
+    width: 50px;
+}
+.conversas p {
+    color: aliceblue;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+.informacoesConversas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
