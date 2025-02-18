@@ -12,7 +12,7 @@ import conectadoAtivo from "../../public/assets/conection_2.png";
 import homeAtivo from "../../public/assets/home_2.png";
 import missionAtivo from "../../public/assets/mission_2.png";
 
-type PageName = "jogos" | "estatistica" | "conectado" | "mission" | "home";
+type PageName = "jogos" | "estatistica" | "conectado" | "conversas" | "home";
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -61,10 +61,10 @@ const Navbar = () => {
                 </li>
                 <li className="BOTlista">
                     <img
-                        src={active === "mission" ? missionAtivo : mission}
+                        src={active === "conversas" ? missionAtivo : mission}
                         alt="Missões"
-                        className={`navegadores ${active === "mission" ? "active" : ""}`}
-                        onClick={() => handleNavigation("/cadastro", "mission")}
+                        className={`navegadores ${active === "conversas" ? "active" : ""}`}
+                        onClick={() => handleNavigation("/conversas", "conversas")}
                     />
                 </li>
                 <li className="BOTlista">

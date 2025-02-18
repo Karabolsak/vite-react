@@ -1,65 +1,44 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Jogos from "./jogos/index.tsx";
 import Cadastro from "./cadastro/index.tsx";
 import Estatistica from "./estatistica/index.tsx";
 import Home from "./home/index.tsx";
-import Login from "./login/index";
+import Login from "./login/index.tsx";
+import Conversas from "./conversas/index.tsx";
 import ProtectedRoute from "./protecaoRota.tsx";
+import { AuthProvider, useAuth } from "./autenticacoes.tsx";
 import { useEffect, useState } from "react";
-import { supabase } from "./clienteSupabase.tsx";
 
 const App = () => {
   return (
-    <Router>
-      <AppRoutes />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </AuthProvider>
   );
 };
 
 const AppRoutes = () => {
-  const [user, setUser] = useState<any>(null);
-  const [isUserRegistered, setIsUserRegistered] = useState<boolean | null>(null);
-  const [loading, setLoading] = useState(true); 
-
+  const { user, isUserRegistered, loading } = useAuth();
+  const navigate = useNavigate();
+  const [redirected, setRedirected] = useState(false); // 👈 Estado para controlar redirecionamento
+  
   useEffect(() => {
-    async function fetchUser() {
-      setLoading(true);
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+    console.log("🔄 Monitorando mudanças: user:", user, "isUserRegistered:", isUserRegistered);
 
-      if (sessionError) {
-        console.error("Erro ao obter sessão:", sessionError);
-        setLoading(false);
-        return;
-      }
-
-      if (session?.user) {
-        console.log("UID do usuário:", session.user.id);
-        setUser(session.user);
-
-        
-        const { data, error } = await supabase
-          .from("complementares")
-          .select("usuario")
-          .eq("usuario", session.user.id)
-          .maybeSingle();
-
-        if (error) {
-          console.error("Erro ao buscar usuário na tabela:", error);
-          setIsUserRegistered(false);
-        } else {
-          console.log("Usuário encontrado no banco:", data);
-          setIsUserRegistered(!!data);
-        }
+    if (!redirected && user && isUserRegistered !== null) {
+      if (isUserRegistered) {
+        console.log("✅ Usuário registrado! Redirecionando para /home...");
+        navigate("/home");
       } else {
-        setIsUserRegistered(false);
+        console.log("⚠️ Usuário não registrado! Redirecionando para /cadastro...");
+        navigate("/cadastro");
       }
-
-      setLoading(false);
+      setRedirected(true); // 👈 Marca que o redirecionamento foi feito
     }
-
-    fetchUser();
-  }, []);
+  }, [user, isUserRegistered, navigate, redirected]);
 
   if (loading) {
     return <div>Carregando...</div>;
@@ -67,15 +46,14 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={user ? (isUserRegistered ? <Navigate to="/home" /> : <Navigate to="/cadastro" />) : <Login />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/cadastro" element={user ? <Cadastro /> : <Navigate to="/login" />} />
-      <Route element={<ProtectedRoute />}>
-        <Route path="/home" element={<Home />} />
-        <Route path="/estatistica" element={<Estatistica />} />
-        <Route path="/jogos" element={<Jogos />} />
-      </Route>
-      {isUserRegistered === false && <Navigate to="/cadastro" replace />}
+      <Route path="/cadastro" element={<ProtectedRoute><Cadastro /></ProtectedRoute>} />
+      <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+      <Route path="/estatistica" element={<ProtectedRoute><Estatistica /></ProtectedRoute>} />
+      <Route path="/conversas" element={<ProtectedRoute><Conversas /> </ProtectedRoute>} />
+      <Route path="/jogos" element={<ProtectedRoute><Jogos /></ProtectedRoute>} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 };

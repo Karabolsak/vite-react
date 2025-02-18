@@ -44,6 +44,11 @@
 .navegacaoTOP li {
     padding: 10px 20px 5px 20px;
 }
+.navegacaoTOP ul li p {
+    font-size: 2em;
+    font-family: var(--font-principal)
+
+}
 h3 {
     color: aliceblue;
     margin-bottom: 10px;

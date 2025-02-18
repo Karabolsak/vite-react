@@ -1,0 +1,6 @@
+canvas {
+    display: block;
+    width: 500px;
+    height: 250px;
+    touch-action: auto;
+}

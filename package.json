@@ -13,6 +13,8 @@
     "@capacitor/android": "^7.0.1",
     "@capacitor/cli": "^7.0.1",
     "@capacitor/core": "^7.0.1",
+    "@react-three/drei": "^9.121.5",
+    "@react-three/fiber": "^8.17.14",
     "@supabase/supabase-js": "^2.48.1",
     "appwrite": "^17.0.0",
     "axios": "^1.7.9",
@@ -22,6 +24,7 @@
     "pyodide": "^0.27.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-native": "latest",
     "react-native-tab-view": "^4.0.5",
     "react-router-dom": "^7.1.5",
     "react-tabs": "^6.1.0",
@@ -42,5 +45,11 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
+  },
+  "server": {
+    "cleartext": true
+  },
+  "android": {
+    "webContentsDebuggingEnabled": true
   }
 }

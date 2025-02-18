@@ -1,5 +1,5 @@
 import './constante.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import Forza from '../jogos/jogos/forza.png';
@@ -8,15 +8,26 @@ import Minecraft from '../jogos/jogos/minecraft.png'
 import Conquista1 from '../../public/conquista1.png';
 import Estrelas from '../../public/estrelas.png';
 import Games from '../../public/games.png';
-
+import { supabase } from '../clienteSupabase'
 
 
 
 const Menu = () => {
 
-    const Jogos = [Forza, Lol, Minecraft, Forza, Lol, Minecraft, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft, Forza, Lol, Minecraft];
-    
     const [activeItem, setActiveItem] = useState<string>('Jogos');
+    const [jogos, setJogos] = useState<{ id: number; imagemJogo: string }[]>([]);
+
+    useEffect(() => {
+        const fetchJogos = async () => {
+            const { data, error } = await supabase.from('jogos').select('id, nomeJogo, imagemJogo');
+            if (error) {
+                console.error('Erro ao buscar jogos:', error);
+            } else {
+                setJogos(data);
+            }
+        };
+        fetchJogos();
+    }, []);
 
 
     const menuItems = ['Jogos', 'Histórico', 'Conquistas'];
@@ -24,19 +35,21 @@ const Menu = () => {
     const renderContent = () => {
         switch (activeItem) {
             case 'Jogos':
-                return <div className='conteudoJogos'>
-                            {Jogos.map((jogo, index) => (
-                                <motion.img 
-                                    key={index} 
-                                    src={jogo} 
-                                    alt="Destaque" 
-                                    className='jogos-imagem'
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.5, delay: index * 0.3 }}
-                                />
-                            ))}
-                            </div>;
+                return (
+                    <div className='conteudoJogos'>
+                        {jogos.map((jogo) => (
+                            <motion.img 
+                                key={jogo.id} 
+                                src={jogo.imagemJogo} 
+                                alt="Destaque" 
+                                className='jogos-imagem'
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5 }}
+                            />
+                        ))}
+                    </div>
+                );
             case 'Histórico':
                 return <div>
                             <ul className='conteudoConquista'>

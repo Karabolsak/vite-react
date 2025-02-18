@@ -1,24 +1,22 @@
-import { Navigate, Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { supabase } from "./clienteSupabase";
+import { Navigate } from "react-router-dom";
+import { useAuth } from "./autenticacoes.tsx";
 
-const ProtectedRoute = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  const { user, isUserRegistered, loading } = useAuth();
 
-  useEffect(() => {
-    const checkUser = async () => {
-      const { data } = await supabase.auth.getUser();
-      setIsAuthenticated(!!data.user); // Define true se o usuário estiver autenticado
-    };
-    
-    checkUser();
-  }, []);
-
-  if (isAuthenticated === null) {
-    return <p>Carregando...</p>; // Mostra um loading enquanto verifica
+  if (loading) {
+    return <div>Carregando...</div>;
   }
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
+  if (!user) {
+    return <Navigate to="/login" />;
+  }
+
+  if (isUserRegistered === false) {
+    return <Navigate to="/cadastro" />;
+  }
+
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;
