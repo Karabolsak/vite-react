@@ -13,8 +13,8 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: fixed;
     padding-top: env(safe-area-inset-top);
+    overflow: auto; /* Permite rolagem */
 }
 .principal {
     display: flex;

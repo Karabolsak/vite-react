@@ -7,6 +7,9 @@
     display: flex;
     justify-content: center; 
     align-items: center;
+    height: 60px;
+    z-index: 1000;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 .navegacaoBOT img {
     max-width: 40px;

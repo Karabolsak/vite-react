@@ -1,13 +1,14 @@
 .conteudoHOME {
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px;
+    margin: 0;
     background-color: var(--fundo-principal);
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh; 
+    padding-bottom: 60px;
+    padding-top: env(safe-area-inset-top);
 }
 .navegacaoTOP {
     top: 0;
@@ -62,7 +63,7 @@
     box-shadow: 1px 1px 1px var(--cor-sombra);
     width: 97vw;
     height: auto;
-    margin: 10px;
+    margin: 0px 0px 10px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
