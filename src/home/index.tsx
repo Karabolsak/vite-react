@@ -1,21 +1,28 @@
 import "./style.css";
 import Bottom from "../bottom/index.tsx";
-import Logo from "./usuario/logo.png";
 import { motion } from "framer-motion";
-import Menu from "./constante.tsx";
-import Config from "../../public/assets/config_1.png";
+
+import Configuracao from '../../icones/pontos-config.svg';
+import TagEscolha from '../../icones/tag-escolha.svg';
+import Diamante from '../../icones/diamante.svg'
+import UsuarioImagem from './usuario/usuario.jpg';
+import Dinheiro from '../../icones/money.svg';
+import Amigos from '../../icones/amigos.svg';
+import Matchs from '../../icones/matchs.svg';
+import Games from '../../icones/games.svg';
+
+
 import LogoNav from "../../Squad.png";
 import { useEffect, useState } from "react";
 import { supabase } from "../clienteSupabase.tsx";
 import { useAuth } from "../autenticacoes.tsx";
-import { useNavigate } from "react-router-dom"; // 🔹 Adicione o useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 export default function Home() {
-  const { user, isUserRegistered, logout } = useAuth(); // 🔹 Certifique-se de pegar o logout
+  const { user, isUserRegistered, logout } = useAuth(); 
   const [nomeCompleto, setNomeCompleto] = useState("Carregando...");
   const [jogoPreferido, setJogoPreferido] = useState("Carregando...");
-  const [nomeUsuario, setNomeUsuario] = useState("Carregando...");
-  const navigate = useNavigate(); // 🔹 Certifique-se de ter o useNavigate
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     if (user && isUserRegistered) {
@@ -37,7 +44,7 @@ export default function Home() {
         const userId = userData.user.id;
         const { data, error } = await supabase
           .from("complementares")
-          .select("nomeCompleto, jogoPreferido, nomeUsuario")
+          .select("nomeCompleto, jogoPreferido")
           .eq("usuario", userId)
           .limit(1);
 
@@ -46,7 +53,6 @@ export default function Home() {
         } else if (data.length > 0) {
           setNomeCompleto(data[0].nomeCompleto || "");
           setJogoPreferido(data[0].jogoPreferido || "");
-          setNomeUsuario(data[0].nomeUsuario || "");
         } else {
           setNomeCompleto("");
           setJogoPreferido("");
@@ -59,10 +65,10 @@ export default function Home() {
     fetchNomeCompleto();
   }, []);
 
-  // 🔹 Função de logout dentro do Home.tsx
+
   const handleLogout = async () => {
     await logout(navigate);
-    navigate("/login"); // 🔹 Redireciona o usuário após o logout
+    navigate("/login"); 
   };
 
   return (
@@ -70,94 +76,108 @@ export default function Home() {
       <div className="navegacaoTOP">
         <ul>
           <li>
-            {/* 🔹 Adicionei onClick={() => handleLogout()} para chamar o logout corretamente */}
             <img src={LogoNav} alt="logo" className="TOP-logo" onClick={handleLogout} />
           </li>
           <li>
             <p>Squad</p>
           </li>
           <li>
-            <img src={Config} alt="Configuração" className="TOP-img" />
+            <img src={Configuracao} alt="Configuração" className="TOP-img" />
           </li>
         </ul>
       </div>
-
-      <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.2, delay: 0.3 }}>
-        <h3>Olá, {nomeCompleto}</h3>
-      </motion.div>
-
-      <div className="perfilHOME">
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
-          <div className="perfilHOME-P">
-            <p>Ranking</p>
-            <motion.img
-              src={Logo}
-              alt="Ranking"
-              className="ranking-User"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            />
+      <motion.div 
+        className="conteudoPERFIL"
+        initial={{ opacity: 0, scale: 0.8 }} 
+        animate={{ opacity: 1, scale: 1 }} 
+        transition={{ duration: 0.5, delay: 0.2 }}
+        >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ duration: 1, delay: 0.3 }}
+          >  
+          <div className="descritivoPERFIL">
+            <img src={TagEscolha} alt="titulo de escolha"  className="TAG"/>
+            <h2>Conquistador</h2>
+          </div>
+          <div>
+            <h1 className="boasVINDAS">Olá, {nomeCompleto} </h1>
+          </div>
+          <div className="descritivoPERFIL">
+            <img src={Diamante} alt="gold trocavel" />
+            <p>2.500</p>
+            <img src={Dinheiro} alt="gold monetario" />
+            <p>150</p>
           </div>
         </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.7 }} className="perfilHOME-P">
-          <p>Partidas</p>
-          <p>234</p>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.7 }} className="perfilHOME-P">
-          <p>Amigos</p>
-          <p>15</p>
-        </motion.div>
-      </div>
-
-      <div className="informacoesHOME">
-        <ul>
-          <li className="informacoesLista">
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.1, delay: 0.3 }}>
-              <h1>Jogos</h1>
-              <h3>5</h3>
-            </motion.div>
-          </li>
-          <li>
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.3, delay: 0.3 }}>
-              <h1>Pontos</h1>
-              <h3>31.578</h3>
-            </motion.div>
-          </li>
-          <li>
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
-              <h1>Avaliação</h1>
-              <h3>*****</h3>
-            </motion.div>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }}>
-              <h1>Destaque</h1>
-              <h3>{jogoPreferido}</h3>
-            </motion.div>
-          </li>
-          <li>
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.3 }}>
-              <h1>Nickname</h1>
-              <h3>{nomeUsuario}</h3>
-            </motion.div>
-          </li>
-          <li>
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, delay: 0.3 }}>
-              <h1>Ranking</h1>
-              <h3>Bronze</h3>
-            </motion.div>
-          </li>
-        </ul>
-      </div>
-
-      <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }}>
-        <Menu />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ duration: 1, delay: 0.3 }}
+          >
+          <img className="fotoUsuario" src={UsuarioImagem} alt="" />
+        </motion.div> 
       </motion.div>
+      <div className="conteudoPreferidos">
+        <motion.div 
+          className="preferido"
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ duration: 1.1, delay: 0.5 }}
+          >
+            <h1>Game preferido</h1>
+            <img src={UsuarioImagem} alt="" />
+            <h1>{jogoPreferido} </h1>
+        </motion.div>
+        <motion.div 
+          className="preferido"
+          initial={{ opacity: 0, scale: 0.8 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ duration: 1, delay: 1 }}
+          >
+            <h1>Novos jogos</h1>
+            <img src={Games} alt="" />
+            <h1>Buscar</h1>
+        </motion.div>
+      </div>
+      <div className="conteudoPreferidos">
+        <motion.div 
+          className="preferido"
+          initial={{opacity: 0, scale: 0.8}}
+          animate={{ opacity: 1, scale: 1}}
+          transition={{ duration: 1, delay: 1.5}}
+          >
+            <h1>Amigos</h1>
+            <img src={Amigos} alt="" />
+            <h1>15</h1>
+        </motion.div>
+        <motion.div 
+          className="preferido"
+          initial={{opacity: 0, scale: 0.8}}
+          animate={{ opacity: 1, scale: 1}}
+          transition={{ duration: 1, delay: 2}}
+          >
+            <h1>Novos Matchs</h1>
+            <img src={Matchs} alt="" />
+            <h1>Buscar</h1>
+        </motion.div>
+      </div>
+      
+      
+
+
+
+
+
+
+      
+
+      
+
+      
+
+      
 
       <Bottom />
     </div>

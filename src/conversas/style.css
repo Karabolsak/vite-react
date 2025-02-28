@@ -1,22 +1,43 @@
 .principalConversas {
-    overflow-x: hidden;
-    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px;
+    margin: 0;
     background-color: rgba(0, 0, 0, 0.85);
-    width: 100vw;
-    height: 100vh;
+    height: 100vh; 
+    overflow-y: auto; 
+    width: 100%;
 }
 .principalConversas h1 {
     color: rgb(255, 255, 255);
+    font-size: 1em;
+    font-weight: 100;
     font-family: var(--font-principal);
+}
+.acessosPet{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 15px;
+}
+.acessosPet img {
+    width: 30px;
+    height: 30px;
+}
+.acessosPet p {
+    font-family: var(--font-principal);
+    padding-top: 5px;
 }
 .principalPETS {
     margin-top: 50px;
     width: 250px;
     height: 200px;
+}
+.conversasFundo {
+    background-color: #696969;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 1px 0px 5px rgba(255, 0, 0, 0.486);
+    padding-bottom: 50px;
 }
 .conteudoConversas {
     width: 100vw;
@@ -27,21 +48,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 10px;
 }
 .conteudoConversas p {
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     font-family: var(--font-principal);
-    font-size: large;
+    font-size: 2em;
 }
 .conteudoConversas img {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 }
 .conversas {
     background-color: #f0f8ff1c;
     margin: 15px 10px 0px 10px;
     border-radius: 10px;
-    box-shadow: 02px 2px 15px rgba(255, 0, 0, 0.70);
+    box-shadow: 02px 2px 15px rgba(255, 0, 0, 18%);
 }
 .conversas ul {
     list-style: none;
@@ -55,7 +77,7 @@
     width: 50px;
 }
 .conversas p {
-    color: aliceblue;
+    color: rgb(0, 0, 0);
     padding-bottom: 5px;
     font-weight: bold;
 }

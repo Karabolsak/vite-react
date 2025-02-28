@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 :root {
-    --font-principal: 'Satisfy', sans-serif;
+    --font-principal: 'Audiowide', sans-serif;
+    --font-secundaria: 'Orbitron', sans-serif;
+    --fundo-principal: #000000; 
+    --fundo-secundario: #181818;
+    --cor-font-principal: #00E676;
+    --cor-subtexto: aliceblue;
+    --cor-sombra: #00ffc85d;
 }

@@ -57,7 +57,7 @@ const Login = () => {
     return (
         <div className="principal">
             <img src={Logo} className='logo' alt="Logo" />
-            <h2>{isRegistering ? 'Criar Conta' : 'Seja Bem-Vindo'}</h2>
+            <h2>{isRegistering ? 'Crie sua conta no Squad' : 'Seja Bem-Vindo ao Squad'}</h2>
             <div className='conteudo'>
                 <form onSubmit={isRegistering ? handleSignUp : handleLogin}>
                     <input
