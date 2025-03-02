@@ -1,25 +1,25 @@
 .conteudoHOME {
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    background-color: var(--fundo-principal);
     width: 100vw;
-    min-height: 100vh; 
+    height: 100vh; 
     padding-bottom: 60px;
-    padding-top: env(safe-area-inset-top);
+    background-color: var(--fundo-principal);
+    padding-top: calc(5px + env(safe-area-inset-top));
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
 }
 .navegacaoTOP {
+    width: 100%;
+    position: fixed;
     top: 0;
-    z-index: 500;
     background-color: var(--fundo-secundario);
     display: flex;
     box-shadow: 1px 1px 1px var(--cor-sombra);
     border-radius: 0px 0px 10px 10px;
     justify-content: center; 
     align-items: center;
-    margin-bottom: 10px;
+    padding-top: env(safe-area-inset-top);
 }
 .TOP-usuario {
     max-width: 40px;
@@ -60,13 +60,13 @@
     background-color: var(--fundo-secundario);
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px var(--cor-sombra);
     width: 97vw;
     height: auto;
     margin: 0px 0px 10px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px 0px 20px 0px;
 }
 .conteudoPERFIL h2 {
     color: var(--cor-subtexto);
@@ -98,11 +98,10 @@
 .conteudoPreferidos {
     display: flex;
     gap: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .preferido {
     background-color: var(--fundo-secundario);
-    box-shadow: 1px 1px 1px var(--cor-sombra);
     border-radius: 10px;
     display: flex;
     flex-direction: column;

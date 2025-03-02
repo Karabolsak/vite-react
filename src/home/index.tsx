@@ -23,6 +23,76 @@ export default function Home() {
   const [nomeCompleto, setNomeCompleto] = useState("Carregando...");
   const [jogoPreferido, setJogoPreferido] = useState("Carregando...");
   const navigate = useNavigate(); 
+  
+  
+  const [imagemJogo, setImagemJogo] = useState("");
+  useEffect(() => {
+    if (user && isUserRegistered) {
+      console.log("📥 Salvando dados no localStorage...");
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("isUserRegistered", JSON.stringify(isUserRegistered));
+    }
+  }, [user, isUserRegistered]);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (!user) return;
+
+      try {
+        const userId = user.id;
+
+        // Buscar nome completo e jogo preferido
+        const { data, error } = await supabase
+          .from("complementares")
+          .select("nomeCompleto, jogoPreferido")
+          .eq("usuario", userId)
+          .limit(1)
+          .single();
+
+        if (error) {
+          console.error("Erro ao buscar dados do usuário:", error);
+          return;
+        }
+
+        if (data) {
+          setNomeCompleto(data.nomeCompleto || "Sem nome");
+          setJogoPreferido(data.jogoPreferido || "");
+
+          if (data.jogoPreferido) {
+            fetchJogoImagem(data.jogoPreferido);
+          }
+        }
+      } catch (err) {
+        console.error("Erro inesperado:", err);
+      }
+    };
+
+    fetchUserData();
+  }, [user]);
+
+  const fetchJogoImagem = async (nomeJogo) => {
+    try {
+      const { data: jogo, error: errorJogo } = await supabase
+        .from("jogos")
+        .select("imagemJogo")
+        .eq("nomeJogo", nomeJogo.trim())
+        .single();
+
+      if (errorJogo) {
+        console.error("Erro ao buscar imagem do jogo:", errorJogo.message);
+      }else if (jogo && jogo.imagemJogo) {
+        setImagemJogo(jogo.imagemJogo);
+      }
+    } catch (err) {
+      console.error("Erro inesperado ao buscar imagem do jogo:", err);
+    }
+  };
+
+  
+
+
+
+
 
   useEffect(() => {
     if (user && isUserRegistered) {
@@ -127,7 +197,7 @@ export default function Home() {
           transition={{ duration: 1.1, delay: 0.5 }}
           >
             <h1>Game preferido</h1>
-            <img src={UsuarioImagem} alt="" />
+            <img src={imagemJogo} alt="" />
             <h1>{jogoPreferido} </h1>
         </motion.div>
         <motion.div 
@@ -163,39 +233,7 @@ export default function Home() {
             <h1>Buscar</h1>
         </motion.div>
       </div>
-      <motion.div 
-        className="conteudoPERFIL"
-        initial={{ opacity: 0, scale: 0.8 }} 
-        animate={{ opacity: 1, scale: 1 }} 
-        transition={{ duration: 0.5, delay: 0.2 }}
-        >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }} 
-          animate={{ opacity: 1, scale: 1 }} 
-          transition={{ duration: 1, delay: 0.3 }}
-          >  
-          <div className="descritivoPERFIL">
-            <img src={TagEscolha} alt="titulo de escolha"  className="TAG"/>
-            <h2>Conquistador</h2>
-          </div>
-          <div>
-            <h1 className="boasVINDAS">Olá, {nomeCompleto} </h1>
-          </div>
-          <div className="descritivoPERFIL">
-            <img src={Diamante} alt="gold trocavel" />
-            <p>2.500</p>
-            <img src={Dinheiro} alt="gold monetario" />
-            <p>150</p>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }} 
-          animate={{ opacity: 1, scale: 1 }} 
-          transition={{ duration: 1, delay: 0.3 }}
-          >
-          <img className="fotoUsuario" src={UsuarioImagem} alt="" />
-        </motion.div> 
-      </motion.div>
+      
       
       <Bottom />
     </div>

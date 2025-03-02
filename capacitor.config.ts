@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'vite-react',
   webDir: 'dist',
   server: {
-    url: "http://192.168.1.12:5174/", // Substitua pelo IP correto da sua máquina
+    url: "http://192.168.1.26:5174/", // Substitua pelo IP correto da sua máquina
     cleartext: true
   }
 };
