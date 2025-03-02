@@ -1,8 +1,8 @@
 .navagecaoBOT {
     position: fixed;
     bottom: 0;
-    background-color: #ffffff;
-    box-shadow: 02px 2px 15px rgba(255, 0, 0, 0.70);
+    background-color: var(--fundo-secundario);
+    box-shadow: 1px 1px 10px var(--cor-sombra);
     border-radius: 10px 10px 0px 0px;
     display: flex;
     justify-content: center; 
@@ -39,7 +39,4 @@
     height: 50px;
     cursor: pointer;
     transition: opacity 0.3s;
-}
-.navegadores.active {
-    filter: brightness(0.5);
 }

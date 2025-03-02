@@ -1,0 +1,14 @@
+.conteudoLOJA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; 
+    padding-bottom: 60px;
+    background-color: var(--fundo-principal);
+    padding-top: calc(5px + env(safe-area-inset-top));
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+}
+h1 {
+    color: aliceblue;
+}

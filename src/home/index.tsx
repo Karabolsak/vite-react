@@ -1,7 +1,6 @@
 import "./style.css";
 import Bottom from "../bottom/index.tsx";
 import { motion } from "framer-motion";
-
 import Configuracao from '../../icones/pontos-config.svg';
 import TagEscolha from '../../icones/tag-escolha.svg';
 import Diamante from '../../icones/diamante.svg'
@@ -10,8 +9,6 @@ import Dinheiro from '../../icones/money.svg';
 import Amigos from '../../icones/amigos.svg';
 import Matchs from '../../icones/matchs.svg';
 import Games from '../../icones/games.svg';
-
-
 import LogoNav from "../../Squad.png";
 import { useEffect, useState } from "react";
 import { supabase } from "../clienteSupabase.tsx";
@@ -23,8 +20,6 @@ export default function Home() {
   const [nomeCompleto, setNomeCompleto] = useState("Carregando...");
   const [jogoPreferido, setJogoPreferido] = useState("Carregando...");
   const navigate = useNavigate(); 
-  
-  
   const [imagemJogo, setImagemJogo] = useState("");
   useEffect(() => {
     if (user && isUserRegistered) {
@@ -70,7 +65,7 @@ export default function Home() {
     fetchUserData();
   }, [user]);
 
-  const fetchJogoImagem = async (nomeJogo) => {
+  const fetchJogoImagem = async (nomeJogo: string) => {
     try {
       const { data: jogo, error: errorJogo } = await supabase
         .from("jogos")
@@ -87,13 +82,6 @@ export default function Home() {
       console.error("Erro inesperado ao buscar imagem do jogo:", err);
     }
   };
-
-  
-
-
-
-
-
   useEffect(() => {
     if (user && isUserRegistered) {
       console.log("📥 Salvando dados no localStorage...");
@@ -131,15 +119,19 @@ export default function Home() {
         console.error("Erro inesperado:", err);
       }
     };
-
     fetchNomeCompleto();
   }, []);
-
-
   const handleLogout = async () => {
     await logout(navigate);
     navigate("/login"); 
   };
+
+
+
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+};
 
   return (
     <div className="conteudoHOME">
@@ -205,6 +197,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ duration: 1, delay: 1 }}
+          onClick={() => handleNavigation("/jogos")}
           >
             <h1>Novos jogos</h1>
             <img src={Games} alt="" />
@@ -227,6 +220,7 @@ export default function Home() {
           initial={{opacity: 0, scale: 0.8}}
           animate={{ opacity: 1, scale: 1}}
           transition={{ duration: 1, delay: 2}}
+          onClick={() => handleNavigation("/matchs")}
           >
             <h1>Novos Matchs</h1>
             <img src={Matchs} alt="" />

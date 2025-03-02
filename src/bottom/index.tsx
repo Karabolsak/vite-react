@@ -1,26 +1,23 @@
 import "./style.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import jogos from "../../public/assets/joystick_1.png";
-import estatistica from "../../public/assets/statistics_1.png";
-import conectado from "../../public/assets/conection_1.png";
-import mission from "../../public/assets/mission_1.png";
-import home from "../../public/assets/home_1.png";
-import jogosAtivo from "../../public/assets/joystick_2.png";
-import estatisticaAtivo from "../../public/assets/statistics_2.png";
-import conectadoAtivo from "../../public/assets/conection_2.png";
-import homeAtivo from "../../public/assets/home_2.png";
-import missionAtivo from "../../public/assets/mission_2.png";
+import loja from "../../icones/loja_1.svg";
+import pet from "../../icones/pet_1.svg";
+import home from "../../icones/home_1.svg";
+import lojaAtiva from "../../icones/loja_2.svg";
+import homeAtivo from "../../icones/home_2.svg";
+import petAtivo from "../../icones/pet_2.svg";
 
-type PageName = "jogos" | "estatistica" | "conectado" | "conversas" | "home";
+
+
+type PageName = "loja" | "pet" | "home";
 
 const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const [active, setActive] = useState<PageName>("home"); // Define um valor inicial válido
+    const [active, setActive] = useState<PageName>("home"); 
 
     useEffect(() => {
-        // Atualiza o estado com base na URL atual
         const path = location.pathname.replace("/", "") as PageName;
         if (path) setActive(path);
     }, [location.pathname]);
@@ -28,43 +25,29 @@ const Navbar = () => {
     const handleNavigation = (path: string, name: PageName) => {
         if (active !== name) {
             setActive(name);
-            navigate(path); // Agora a navegação acontece corretamente
+            navigate(path);
         }
     };
 
     return (
         <nav className="navagecaoBOT">
             <ul className="controleBOT">
+                
                 <li className="BOTlista">
                     <img
-                        src={active === "jogos" ? jogosAtivo : jogos}
-                        alt="Jogos"
-                        className={`navegadores ${active === "jogos" ? "active" : ""}`}
-                        onClick={() => handleNavigation("/jogos", "jogos")}
-                    />
-                </li>
-                <li className="BOTlista">
-                    <img
-                        src={active === "estatistica" ? estatisticaAtivo : estatistica}
+                        src={active === "loja" ? lojaAtiva : loja}
                         alt="Estatísticas"
-                        className={`navegadores ${active === "estatistica" ? "active" : ""}`}
-                        onClick={() => handleNavigation("/estatistica", "estatistica")}
+                        className={`navegadores ${active === "loja" ? "active" : ""}`}
+                        onClick={() => handleNavigation("/loja", "loja")}
                     />
                 </li>
+                
                 <li className="BOTlista">
                     <img
-                        src={active === "conectado" ? conectadoAtivo : conectado}
-                        alt="Conexões"
-                        className={`navegadores ${active === "conectado" ? "active" : ""}`}
-                        onClick={() => handleNavigation("/conectado", "conectado")}
-                    />
-                </li>
-                <li className="BOTlista">
-                    <img
-                        src={active === "conversas" ? missionAtivo : mission}
+                        src={active === "pet" ? petAtivo : pet}
                         alt="Missões"
-                        className={`navegadores ${active === "conversas" ? "active" : ""}`}
-                        onClick={() => handleNavigation("/conversas", "conversas")}
+                        className={`navegadores ${active === "pet" ? "active" : ""}`}
+                        onClick={() => handleNavigation("/pet", "pet")}
                     />
                 </li>
                 <li className="BOTlista">

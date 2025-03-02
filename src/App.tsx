@@ -2,10 +2,11 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Jogos from "./jogos/index.tsx";
 import Cadastro from "./cadastro/index.tsx";
-import Estatistica from "./estatistica/index.tsx";
+import Loja from "./loja/index.tsx";
 import Home from "./home/index.tsx";
 import Login from "./login/index.tsx";
-import Conversas from "./conversas/index.tsx";
+import Pet from "./pet/index.tsx";
+import Matchs from './matchs/index.tsx'
 import ProtectedRoute from "./protecaoRota.tsx";
 import { AuthProvider, useAuth } from "./autenticacoes.tsx";
 import { useEffect, useState } from "react";
@@ -50,9 +51,10 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/cadastro" element={<ProtectedRoute><Cadastro /></ProtectedRoute>} />
       <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-      <Route path="/estatistica" element={<ProtectedRoute><Estatistica /></ProtectedRoute>} />
-      <Route path="/conversas" element={<ProtectedRoute><Conversas /> </ProtectedRoute>} />
+      <Route path="/Loja" element={<ProtectedRoute><Loja /></ProtectedRoute>} />
+      <Route path="/pet" element={<ProtectedRoute><Pet /> </ProtectedRoute>} />
       <Route path="/jogos" element={<ProtectedRoute><Jogos /></ProtectedRoute>} />
+      <Route path="/matchs" element={<ProtectedRoute><Matchs /></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

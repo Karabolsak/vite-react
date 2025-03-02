@@ -8,7 +8,7 @@ import Acessar from '../../public/acessarPet.png';
 import Doguinho from '../Pets/doguinho.tsx';
 
 
-export default function Conversas() { 
+export default function Pet() { 
   return (
     <div className="principalConversas">
       <div className="acessosPet">
