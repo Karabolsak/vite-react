@@ -3,10 +3,10 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    height: 100vh; 
+    height: 100%; 
     padding-bottom: 60px;
     background-color: var(--fundo-principal);
-    padding-top: calc(5px + env(safe-area-inset-top));
+    padding-top: calc(190px + env(safe-area-inset-top));
     padding-bottom: calc(60px + env(safe-area-inset-bottom));
 }
 .navegacaoTOP {
@@ -120,4 +120,41 @@
     font-size: 1em;
     font-weight: 400;
     font-family: var(--font-secundaria);
+    color: var(--cor-subtexto);
 }
+.conteudoDISPONIBILIDADE {
+    background-color: var(--fundo-secundario);
+    padding: 10px;
+    border-radius: 10px;
+    width: 97vw;
+    margin: 0px 0px 10px 0px;
+}
+.disponibilidadeJOGAR{ 
+    display: flex;
+    justify-content: space-between;
+}
+.disponibilidadeJOGAR h1 {
+    font-family: var(--font-secundaria);
+    color: var(--cor-subtexto);
+    font-size: 1em;
+    font-weight: 400;
+}
+.ContainerDisponibildiade {
+    width: 100%;
+    height: 240px;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+
+  
+ 
+  
+
+  
+
+  
+  

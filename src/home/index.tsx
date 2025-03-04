@@ -4,16 +4,18 @@ import { motion } from "framer-motion";
 import Configuracao from '../../icones/pontos-config.svg';
 import TagEscolha from '../../icones/tag-escolha.svg';
 import Diamante from '../../icones/diamante.svg'
-import UsuarioImagem from './usuario/usuario.jpg';
+import UsuarioImagem from './usuario/usuario.jpeg';
 import Dinheiro from '../../icones/money.svg';
 import Amigos from '../../icones/amigos.svg';
 import Matchs from '../../icones/matchs.svg';
 import Games from '../../icones/games.svg';
+import Navegar from '../../icones/navegar.svg';
 import LogoNav from "../../Squad.png";
 import { useEffect, useState } from "react";
 import { supabase } from "../clienteSupabase.tsx";
 import { useAuth } from "../autenticacoes.tsx";
 import { useNavigate } from "react-router-dom"; 
+import { BarChart, Bar, XAxis, ResponsiveContainer } from "recharts";
 
 export default function Home() {
   const { user, isUserRegistered, logout } = useAuth(); 
@@ -21,6 +23,7 @@ export default function Home() {
   const [jogoPreferido, setJogoPreferido] = useState("Carregando...");
   const navigate = useNavigate(); 
   const [imagemJogo, setImagemJogo] = useState("");
+
   useEffect(() => {
     if (user && isUserRegistered) {
       console.log("📥 Salvando dados no localStorage...");
@@ -35,8 +38,6 @@ export default function Home() {
 
       try {
         const userId = user.id;
-
-        // Buscar nome completo e jogo preferido
         const { data, error } = await supabase
           .from("complementares")
           .select("nomeCompleto, jogoPreferido")
@@ -125,13 +126,18 @@ export default function Home() {
     await logout(navigate);
     navigate("/login"); 
   };
-
-
-
-
   const handleNavigation = (path: string) => {
     navigate(path);
 };
+  const Data = [
+  { dia: "Seg", value: 100},
+  { dia: "Terç", value: 20},
+  { dia: "Qua", value: 50 },
+  { dia: "Qui", value: 70 },
+  { dia: "Sex", value: 10 }, 
+  { dia: "Sab", value: 60 },
+  { dia: "Dom", value: 90 },
+]
 
   return (
     <div className="conteudoHOME">
@@ -227,6 +233,34 @@ export default function Home() {
             <h1>Buscar</h1>
         </motion.div>
       </div>
+      <motion.div 
+        className="conteudoDISPONIBILIDADE"
+        initial={{opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 2.5}}
+      >
+        <div className="disponibilidadeJOGAR">
+          <h1>Disponibilidade</h1>
+          <img src={Navegar} alt="navegação" onClick={() => handleNavigation("/disponibilidade")}/>
+        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="ContainerDisponibildiade"
+        >
+          <ResponsiveContainer>
+            <BarChart data={Data} barSize={25}>
+              <XAxis dataKey="dia" />
+              <Bar
+                dataKey="value"
+                fill="#00E676"
+                radius={[10, 10, 0, 0]}
+                />
+            </BarChart>
+          </ResponsiveContainer>
+        </motion.div>
+      </motion.div>
       
       
       <Bottom />

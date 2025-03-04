@@ -28,6 +28,7 @@
     "react-native-tab-view": "^4.0.5",
     "react-router-dom": "^7.1.5",
     "react-tabs": "^6.1.0",
+    "recharts": "^2.15.1",
     "three": "^0.173.0",
     "uuid": "^11.0.5"
   },

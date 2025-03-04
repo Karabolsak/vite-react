@@ -1,0 +1,61 @@
+.conteudoDinamica {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0px;
+    background-color: var(--fundo-principal);
+    width: 100vw;
+    height: 100vh;
+}
+.platDinamicos {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--fundo-secundario);
+}
+.platDinamicos p {
+    font-family: var(--font-secundaria);
+    color: var(--cor-subtexto);
+}
+.platDinamicos h1 {
+    color: var(--cor-font-principal);
+    font-family: var(--font-principal);
+    font-size: 1.5em;
+}
+.platDinamicos h2 {
+    color: var(--cor-subtexto);
+    font-family: var(--font-secundaria);
+    font-size: 1em;
+    font-weight: 400;
+}
+.platDinamicos h3 {
+    color: var(--cor-subtexto);
+    font-family: var(--font-secundaria);
+    font-size: 1em;
+    font-weight: 300;
+    text-align: justify;
+    text-indent: 1em;
+    margin-top: 10px;
+}
+.conteudoJOGOSdinamico {
+    display: flex;
+}
+.conteudoJOGOSdinamico img {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px var(--cor-sombra);
+}
+.jogosINFORMACOES {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 10px;
+}
+
+.descricaoDinamicos {
+    margin-top: 10px;
+}

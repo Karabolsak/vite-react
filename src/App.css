@@ -8,3 +8,11 @@
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
 }
+.BotaoRETORNO {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px 10px 0px 10px;
+}
+.BotaoRETORNO img {
+    width: 30px;
+}

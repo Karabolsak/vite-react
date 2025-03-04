@@ -18,7 +18,18 @@ export default function Cadastro() {
   const [user, setUser] = useState<User | null>(null);
   const [, setIsLoading] = useState(true);
 
-  const jogos = ["Minecraft", "Fortnite", "Valorant", "GTA V"];
+  const jogos = [
+    "Apex Legends", 
+    "COD: Warzone", 
+    "Counter-Strike: CS-GO", 
+    "Fortnite", "Free Fire", 
+    "Genshin Impact", 
+    "League of Legends", 
+    "Minecraft", 
+    "PUBG", 
+    "Roblox", 
+    "Valorant"
+  ];
 
   useEffect(() => {
     const checkUser = async () => {
