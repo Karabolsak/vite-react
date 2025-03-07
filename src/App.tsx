@@ -34,7 +34,7 @@ const AppRoutes = () => {
       <Route path="/jogos" element={<ProtectedRoute><Jogos /></ProtectedRoute>} />
       <Route path="/matchs" element={<ProtectedRoute><Matchs /></ProtectedRoute>} />
       <Route path="/disponibilidade" element={<ProtectedRoute><Disponibilidade /></ProtectedRoute>} />
-      <Route path="/dinamicajogos" element={<ProtectedRoute><DinamicaJogos /></ProtectedRoute>} />
+      <Route path="/dinamicajogos/:id" element={<ProtectedRoute><DinamicaJogos /></ProtectedRoute>} />
     </Routes>
   );
 };

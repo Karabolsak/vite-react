@@ -42,20 +42,21 @@
 }
 .conteudoJOGOSdinamico {
     display: flex;
+    align-items: center;
 }
 .conteudoJOGOSdinamico img {
-    width: 150px;
-    height: 200px;
+    width: 160px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 1px 1px 1px var(--cor-sombra);
 }
 .jogosINFORMACOES {
     display: flex;
     flex-direction: column;
+    
     margin: 10px;
     gap: 10px;
 }
-
 .descricaoDinamicos {
     margin-top: 10px;
 }
