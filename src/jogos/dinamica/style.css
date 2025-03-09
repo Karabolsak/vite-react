@@ -60,3 +60,15 @@
 .descricaoDinamicos {
     margin-top: 10px;
 }
+.botaoJogos {
+    background-color: var(--cor-font-principal);
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px var(--cor-sombra);
+    border: 0px;
+}
+.botaoJogos p {
+    color: black;
+    margin: 5px;
+    font-weight: 400;
+    font-size: large;
+}

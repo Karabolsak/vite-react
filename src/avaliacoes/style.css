@@ -1,0 +1,8 @@
+.avaliacaoRating {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+.avaliacaoRating p {
+    font-size: 0.7em;
+}

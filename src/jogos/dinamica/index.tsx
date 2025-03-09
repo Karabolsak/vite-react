@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Back from '../../../icones/navegar.svg';
 import { supabase } from '../../clienteSupabase.tsx';
 
+import GameRating from '../../avaliacoes/StarRating.tsx';
 
 interface Jogo {
     id: number;
@@ -70,7 +71,7 @@ export default function dinamicaJogos () {
         .filter(([_, value]) => value)
         .map(([key]) => key);
 
-
+        
     return(
         <div className='conteudoDinamica'>
             <div className='BotaoRETORNO'>
@@ -89,14 +90,22 @@ export default function dinamicaJogos () {
                         <h1>{jogo.nomeJogo} </h1>
                         <p>{jogo.dono}</p>
                         <p>{jogo.lancado} </p>
+                        <GameRating gameId={Number (id)} />
                         <p>Plataformas: {plataformasAtivas.length > 0 ?plataformasAtivas.join(", "): "Nenhuma disponível"} </p>
+                        <button className='botaoJogos'
+                            onClick={() => handleNavigation("/salvar")}
+                            >
+                            <p>Salvar jogo</p>
+                        </button>
                     </div>
                 </div>
                 <div className='descricaoDinamicos'>
                     <h2>Descrição</h2>
                     <h3>{jogo.descricao}</h3>
                 </div>
+                
             </div>
+            
         </div>
     )
 }

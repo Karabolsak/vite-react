@@ -194,7 +194,7 @@ export default function Home() {
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ duration: 1.1, delay: 0.5 }}
           >
-            <h1>Game preferido</h1>
+            <h1>Jogo preferido</h1>
             <img src={imagemJogo} alt="" />
             <h1>{jogoPreferido} </h1>
         </motion.div>
